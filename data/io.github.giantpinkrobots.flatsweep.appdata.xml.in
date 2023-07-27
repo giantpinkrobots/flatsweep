@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+<name>Flatsweep</name>
+<summary>Flatpak leftover cleaner</summary>
+<id>io.github.giantpinkrobots.flatsweep</id>
+
+<metadata_license>FSFAP</metadata_license>
+<project_license>MPL-2.0</project_license>
+
+<content_rating type="oars-1.1" />
+<url type="homepage">https://github.com/giantpinkrobots/flatsweep</url>
+
+<description>
+<p>
+When you uninstall a Flatpak, it can leave some files behind on your computer. Flatsweep helps you easily get rid of the residue left on your system by uninstalled Flatpaks.
+</p>
+</description>
+
+<launchable type="desktop-id">io.github.giantpinkrobots.flatsweep.desktop</launchable>
+<screenshots>
+<screenshot type="default">
+<image>https://raw.githubusercontent.com/giantpinkrobots/flatsweep/main/screenshots/Screenshot-Flatsweep-1.png</image>
+</screenshot>
+<screenshot>
+<image>https://raw.githubusercontent.com/giantpinkrobots/flatsweep/main/screenshots/Screenshot-Flatsweep-2.png</image>
+</screenshot>
+</screenshots>
+
+<releases>
+<release version="v2023.7.27" date="2023-07-27">
+<description>
+<p>Initial release.</p>
+</description>
+</release>
+</releases>
+</component>

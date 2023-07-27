@@ -1,0 +1,4 @@
+data/io.github.giantpinkrobots.flatsweep.desktop.in
+data/io.github.giantpinkrobots.flatsweep.appdata.xml.in
+data/io.github.giantpinkrobots.flatsweep.gschema.xml
+src/main.py

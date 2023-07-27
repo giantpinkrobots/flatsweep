@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Flatsweep
+Exec=flatsweep
+Icon=io.github.giantpinkrobots.flatsweep
+Terminal=false
+Type=Application
+Categories=Utility
+StartupNotify=true
