@@ -1,3 +1,4 @@
+#Flatsweep v2023.7.30
 import sys
 import gi
 import subprocess
@@ -41,6 +42,8 @@ class MainWindow(Gtk.ApplicationWindow):
         self.box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, halign = Gtk.Align.CENTER, valign = Gtk.Align.CENTER)
         self.boxCleaning = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.boxCleaned = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.boxNotFound = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.boxNotFound1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
         #Loading Window Box:
         self.loadingLabel = Gtk.Label()
@@ -64,6 +67,20 @@ class MainWindow(Gtk.ApplicationWindow):
         self.boxCleaned.append(self.cleanedLabel)
         self.boxCleaned.append(self.cleanedLabel1)
         self.boxCleaned.append(self.cleanedLabelErrors)
+
+        #No Leftovers Found Window Box:
+        self.notFoundLabel1 = Gtk.Label()
+        self.notFoundLabel1.set_markup("<span size=\"22000\" weight=\"bold\">No leftover data found.</span>")
+        self.notFoundLabel2 = Gtk.Label()
+        self.notFoundLabel2.set_markup("<span size=\"15000\" weight=\"bold\">(or maybe you've set up a non</span>")
+        self.notFoundLabel3 = Gtk.Label()
+        self.notFoundLabel3.set_markup("<span size=\"15000\" weight=\"bold\">standard Flatpak installation folder.)</span>")
+        self.boxNotFound.set_margin_top(50)
+        self.boxNotFound.set_spacing(50)
+        self.boxNotFound.append(self.notFoundLabel1)
+        self.boxNotFound1.append(self.notFoundLabel2)
+        self.boxNotFound1.append(self.notFoundLabel3)
+        self.boxNotFound.append(self.boxNotFound1)
 
         #Main Window Box:
         self.label = Gtk.Label()
@@ -119,9 +136,11 @@ class MainWindow(Gtk.ApplicationWindow):
         th.start()
 
     def initiate(self, app, kwargs):
-        flatpakList = subprocess.run(['flatpak-spawn', '--host', 'flatpak', '--columns=app', 'list'], stdout=subprocess.PIPE)
-        flatpakList = flatpakList.stdout.decode('utf-8').split("\n")
-
+        flatpakListAll = listdir("/var/lib/flatpak/app") + listdir(".local/share/flatpak/app")
+        flatpakList = []
+        for flatpak in flatpakListAll:
+            if (flatpak not in flatpakList):
+                flatpakList.append(flatpak)
         varApp = listdir(".var/app")
 
         self.leftoverData = []
@@ -141,14 +160,16 @@ class MainWindow(Gtk.ApplicationWindow):
             self.listBox.append(self.listBoxRow)
 
         self.leftoverDataSize = int(((self.leftoverDataSize / 1024) / 1024) * 1.048576)
-
-        self.labelMB.set_markup("<span size=\"80000\" weight=\"bold\">" + str(self.leftoverDataSize) + "</span>")
-        self.scroll.set_child(self.box)
+        if (self.leftoverDataSize == 0):
+            self.scroll.set_child(self.boxNotFound)
+        else:
+            self.labelMB.set_markup("<span size=\"80000\" weight=\"bold\">" + str(self.leftoverDataSize) + "</span>")
+            self.scroll.set_child(self.box)
 
     def show_about(self, app):
         dialog = Adw.AboutWindow(transient_for=self)
         dialog.set_application_name("Flatsweep")
-        dialog.set_version("v2023.7.27")
+        dialog.set_version("v2023.7.30")
         dialog.set_developer_name("Giant Pink Robots!")
         dialog.set_license_type(Gtk.License(Gtk.License.MPL_2_0))
         dialog.set_comments("Flatpak leftover cleaner")

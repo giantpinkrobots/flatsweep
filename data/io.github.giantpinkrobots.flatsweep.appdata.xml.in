@@ -27,9 +27,9 @@ When you uninstall a Flatpak, it can leave some files behind on your computer. F
 </screenshots>
 
 <releases>
-<release version="v2023.7.27" date="2023-07-27">
+<release version="v2023.7.30" date="2023-07-27">
 <description>
-<p>Initial release.</p>
+<p>Altered the required Flatpak permissions to be more minimal, and also added a new "no leftovers found" screen.</p>
 </description>
 </release>
 </releases>
