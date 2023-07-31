@@ -1,4 +1,4 @@
-#Flatsweep v2023.7.30
+#Flatsweep v2023.7.31
 import sys
 import gi
 import subprocess
@@ -43,7 +43,7 @@ class MainWindow(Gtk.ApplicationWindow):
         self.boxCleaning = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.boxCleaned = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.boxNotFound = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        self.boxNotFound1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.boxFirstLaunch = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
         #Loading Window Box:
         self.loadingLabel = Gtk.Label()
@@ -69,18 +69,57 @@ class MainWindow(Gtk.ApplicationWindow):
         self.boxCleaned.append(self.cleanedLabelErrors)
 
         #No Leftovers Found Window Box:
-        self.notFoundLabel1 = Gtk.Label()
-        self.notFoundLabel1.set_markup("<span size=\"22000\" weight=\"bold\">No leftover data found.</span>")
-        self.notFoundLabel2 = Gtk.Label()
-        self.notFoundLabel2.set_markup("<span size=\"15000\" weight=\"bold\">(or maybe you've set up a non</span>")
-        self.notFoundLabel3 = Gtk.Label()
-        self.notFoundLabel3.set_markup("<span size=\"15000\" weight=\"bold\">standard Flatpak installation folder.)</span>")
-        self.boxNotFound.set_margin_top(50)
+        self.notFoundLabel = Gtk.Label()
+        self.notFoundLabel.set_markup("<span size=\"22000\" weight=\"bold\">No leftover data found.</span>")
+        self.boxNotFound.set_margin_top(80)
         self.boxNotFound.set_spacing(50)
-        self.boxNotFound.append(self.notFoundLabel1)
-        self.boxNotFound1.append(self.notFoundLabel2)
-        self.boxNotFound1.append(self.notFoundLabel3)
-        self.boxNotFound.append(self.boxNotFound1)
+        self.boxNotFound.append(self.notFoundLabel)
+
+        #First Launch Warning Window Box
+        self.firstLaunchLabel1 = Gtk.Label()
+        self.firstLaunchLabel1.set_markup("<span size=\"35000\" weight=\"bold\">Warning</span>")
+        self.firstLaunchLabel2 = Gtk.Label()
+        self.firstLaunchLabel2.set_markup("<span size=\"15000\">Flatsweep exclusively looks at the</span>")
+        self.firstLaunchLabel3 = Gtk.Label()
+        self.firstLaunchLabel3.set_markup("<span size=\"15000\">default Flatpak install directory.</span>")
+        self.firstLaunchLabel4 = Gtk.Label()
+        self.firstLaunchLabel4.set_markup("<span size=\"15000\">If you have a non-default Flatpak install</span>")
+        self.firstLaunchLabel5 = Gtk.Label()
+        self.firstLaunchLabel5.set_markup("<span size=\"15000\">directory, it might mark the data of</span>")
+        self.firstLaunchLabel6 = Gtk.Label()
+        self.firstLaunchLabel6.set_markup("<span size=\"15000\">currently installed Flatpaks for deletion.</span>")
+        self.firstLaunchLabel7 = Gtk.Label()
+        self.firstLaunchLabel7.set_markup("<span size=\"15000\">This message will not show up again.</span>")
+
+        self.firstLaunchLabelsBox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.firstLaunchLabelsBox.append(self.firstLaunchLabel2)
+        self.firstLaunchLabelsBox.append(self.firstLaunchLabel3)
+        self.firstLaunchLabelsBox.append(self.firstLaunchLabel4)
+        self.firstLaunchLabelsBox.append(self.firstLaunchLabel5)
+        self.firstLaunchLabelsBox.append(self.firstLaunchLabel6)
+
+        self.firstLaunchButtonBox = Gtk.Box(spacing=100)
+        self.firstLaunchButtonLabel = Gtk.Label()
+        self.firstLaunchButtonLabel.set_markup("<span size=\"25000\" weight=\"bold\">Understood</span>")
+        self.firstLaunchButtonBox.append(self.firstLaunchButtonLabel)
+
+        self.firstLaunchButton = Gtk.Button(child=self.firstLaunchButtonBox)
+        self.firstLaunchButton.get_style_context().add_class("pill")
+        self.firstLaunchButton.get_style_context().add_class("suggested-action")
+        self.firstLaunchButton.connect("clicked", self.firstLaunchDone)
+
+        self.boxFirstLaunch.set_margin_top(80)
+        self.boxFirstLaunch.set_spacing(50)
+
+        self.firstLaunchButtonBox1 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, halign = Gtk.Align.CENTER, valign = Gtk.Align.CENTER)
+        self.firstLaunchButtonBox2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, halign = Gtk.Align.CENTER, valign = Gtk.Align.CENTER)
+
+        self.boxFirstLaunch.append(self.firstLaunchLabel1)
+        self.boxFirstLaunch.append(self.firstLaunchLabelsBox)
+        self.boxFirstLaunch.append(self.firstLaunchLabel7)
+        self.firstLaunchButtonBox2.append(self.firstLaunchButton)
+        self.firstLaunchButtonBox1.append(self.firstLaunchButtonBox2)
+        self.boxFirstLaunch.append(self.firstLaunchButtonBox1)
 
         #Main Window Box:
         self.label = Gtk.Label()
@@ -131,9 +170,12 @@ class MainWindow(Gtk.ApplicationWindow):
         self.connect("realize", self.init_initiate)
 
     def init_initiate(self, app):
-        self.scroll.set_child(self.boxLoading)
-        th = threading.Thread(target=self.initiate, args=(app))
-        th.start()
+        if not (os.path.exists(os.getenv("XDG_DATA_HOME") + "/firstLaunchWarningDone")):
+            self.scroll.set_child(self.boxFirstLaunch)
+        else:
+            self.scroll.set_child(self.boxLoading)
+            th = threading.Thread(target=self.initiate, args=(app))
+            th.start()
 
     def initiate(self, app, kwargs):
         flatpakListAll = listdir("/var/lib/flatpak/app") + listdir(".local/share/flatpak/app")
@@ -166,10 +208,16 @@ class MainWindow(Gtk.ApplicationWindow):
             self.labelMB.set_markup("<span size=\"80000\" weight=\"bold\">" + str(self.leftoverDataSize) + "</span>")
             self.scroll.set_child(self.box)
 
+    def firstLaunchDone(self, app):
+        open((os.getenv("XDG_DATA_HOME") + "/firstLaunchWarningDone"), 'a').close()
+        self.scroll.set_child(self.boxLoading)
+        th = threading.Thread(target=self.initiate, args=(app, {}))
+        th.start()
+
     def show_about(self, app):
         dialog = Adw.AboutWindow(transient_for=self)
         dialog.set_application_name("Flatsweep")
-        dialog.set_version("v2023.7.30")
+        dialog.set_version("v2023.7.31")
         dialog.set_developer_name("Giant Pink Robots!")
         dialog.set_license_type(Gtk.License(Gtk.License.MPL_2_0))
         dialog.set_comments("Flatpak leftover cleaner")

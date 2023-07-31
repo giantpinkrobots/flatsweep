@@ -14,6 +14,9 @@
 <p>
 When you uninstall a Flatpak, it can leave some files behind on your computer. Flatsweep helps you easily get rid of the residue left on your system by uninstalled Flatpaks.
 </p>
+<p>
+Caution: Flatsweep exclusively looks at the default Flatpak install directory. If you have set a custom install path, it might accidentally delete files that weren't supposed to be deleted. If you have no idea what a 'custom install path' is, you'll be fine.
+</p>
 </description>
 
 <launchable type="desktop-id">io.github.giantpinkrobots.flatsweep.desktop</launchable>
@@ -27,9 +30,9 @@ When you uninstall a Flatpak, it can leave some files behind on your computer. F
 </screenshots>
 
 <releases>
-<release version="v2023.7.30" date="2023-07-27">
+<release version="v2023.7.31" date="2023-07-31">
 <description>
-<p>Altered the required Flatpak permissions to be more minimal, and also added a new "no leftovers found" screen.</p>
+<p>Added a warning about non default Flatpak install directories.</p>
 </description>
 </release>
 </releases>
