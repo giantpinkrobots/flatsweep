@@ -1,4 +1,4 @@
-#Flatsweep v2023.7.31
+#Flatsweep v2023.8.2
 import sys
 import gi
 import subprocess
@@ -178,24 +178,32 @@ class MainWindow(Gtk.ApplicationWindow):
             th.start()
 
     def initiate(self, app, kwargs):
-        flatpakListAll = listdir("/var/lib/flatpak/app") + listdir(".local/share/flatpak/app")
+        flatpakListAll = []
+        if (os.path.exists("/var/lib/flatpak/app")):
+            flatpakListAll += listdir("/var/lib/flatpak/app")
+        if (os.path.exists(".local/share/flatpak/app")):
+            flatpakListAll += listdir(".local/share/flatpak/app")
         flatpakList = []
         for flatpak in flatpakListAll:
             if (flatpak not in flatpakList):
                 flatpakList.append(flatpak)
-        varApp = listdir(".var/app")
+
+        varApp = []
+        if (os.path.exists(".var/app")):
+            varApp = listdir(".var/app")
 
         self.leftoverData = []
 
-        for existingDataDirectory in varApp:
-            if ((os.path.exists(".var/app/" + existingDataDirectory + "/cache"))
-                and (os.path.exists(".var/app/" + existingDataDirectory + "/config"))
-                and (os.path.exists(".var/app/" + existingDataDirectory + "/data"))
-                and (" " not in existingDataDirectory)
-                and (existingDataDirectory not in flatpakList)):
-                    self.leftoverDataSize += sum(foundFile.stat().st_size for foundFile in Path('.var/app/' + existingDataDirectory).glob('**/*') if foundFile.is_file())
-                    if (existingDataDirectory not in self.leftoverData):
-                        self.leftoverData.append(existingDataDirectory)
+        if (varApp != []):
+            for existingDataDirectory in varApp:
+                if ((os.path.exists(".var/app/" + existingDataDirectory + "/cache"))
+                    and (os.path.exists(".var/app/" + existingDataDirectory + "/config"))
+                    and (os.path.exists(".var/app/" + existingDataDirectory + "/data"))
+                    and (" " not in existingDataDirectory)
+                    and (existingDataDirectory not in flatpakList)):
+                        self.leftoverDataSize += sum(foundFile.stat().st_size for foundFile in Path('.var/app/' + existingDataDirectory).glob('**/*') if foundFile.is_file())
+                        if (existingDataDirectory not in self.leftoverData):
+                            self.leftoverData.append(existingDataDirectory)
 
         for folder in self.leftoverData:
             self.listBoxRow = Adw.ActionRow(title = folder)
@@ -217,7 +225,7 @@ class MainWindow(Gtk.ApplicationWindow):
     def show_about(self, app):
         dialog = Adw.AboutWindow(transient_for=self)
         dialog.set_application_name("Flatsweep")
-        dialog.set_version("v2023.7.31")
+        dialog.set_version("v2023.8.2")
         dialog.set_developer_name("Giant Pink Robots!")
         dialog.set_license_type(Gtk.License(Gtk.License.MPL_2_0))
         dialog.set_comments("Flatpak leftover cleaner")
