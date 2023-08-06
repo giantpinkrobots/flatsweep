@@ -1,0 +1,67 @@
+# Russian translation for Flatsweep.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Сергей Ворон <voron@duck.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-06 00:01+0300\n"
+"PO-Revision-Date: 2023-08-06 00:14+0300\n"
+"Last-Translator: Сергей Ворон <voron@duck.com>\n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#: data/io.github.giantpinkrobots.flatsweep.desktop.in:3
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:3
+msgid "Flatsweep"
+msgstr "Flatsweep"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:4
+msgid "Flatpak leftover cleaner"
+msgstr "Удаление остатков Flatpak"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:14
+msgid ""
+"When you uninstall a Flatpak, it can leave some files behind on your "
+"computer. Flatsweep helps you easily get rid of the residue left on your "
+"system by uninstalled Flatpaks."
+msgstr ""
+"Когда вы удаляете Flatpak, на вашем компьютере могут остаться некоторые "
+"файлы. Flatsweep поможет вам легко избавиться от оставшихся файлов после "
+"удаления Flatpak."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:17
+msgid ""
+"Flatsweep uses GTK4 and Libadwaita to provide a coherent user interface that "
+"integrates nicely with GNOME, but you can use it on any desktop environment "
+"of course."
+msgstr ""
+"Flatsweep использует GTK4 и Libadwaita для предоставления пользовательского "
+"интерфейса, который хорошо интегрируется с GNOME, но вы, конечно, можете "
+"использовать его в любой среде рабочего стола."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:20
+msgid ""
+"Caution: Flatsweep exclusively looks at the default Flatpak install "
+"directory. If you have set a custom install path, it might accidentally "
+"delete files that weren't supposed to be deleted. If you have no idea what a "
+"'custom install path' is, you'll be fine."
+msgstr ""
+"Предупреждение: Flatsweep просматривает только каталог установки Flatpak по "
+"умолчанию. Если вы задали собственный путь установки, он может случайно "
+"удалить файлы, которые не должны быть удалены. Если вы понятия не имеете, "
+"что такое «пользовательский путь установки», все будет в порядке."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:38
+msgid ""
+"Fixed the issue of the app getting stuck at \"Calculating\" if some folders "
+"don't exist."
+msgstr ""
+"Исправлена ошибка, из-за которой приложение зависало при «Расчете», если "
+"некоторых каталогов не существовало."
