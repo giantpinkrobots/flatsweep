@@ -1,4 +1,5 @@
-#Flatsweep v2023.8.2
+flatsweepVersion = "v2023.8.7"
+
 import sys
 import gi
 import subprocess
@@ -7,11 +8,23 @@ import os
 from pathlib import Path
 import shutil
 import threading
+import textwrap
+import locale
 
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
 from gi.repository import Gtk, Adw, GLib, Gio
+
+locale.setlocale(locale.LC_ALL, os.getenv("LANG"))
+currentLanguage = os.getenv("LANG")
+
+# TRANSLATIONS BEGIN
+if currentLanguage.startswith("tr"):
+    from flatsweep import lang_tr as lang
+else:
+    from flatsweep import lang_en as lang
+#TRANSLATIONS END
 
 class MainWindow(Gtk.ApplicationWindow):
     def __init__(self, *args, **kwargs):
@@ -47,20 +60,20 @@ class MainWindow(Gtk.ApplicationWindow):
 
         #Loading Window Box:
         self.loadingLabel = Gtk.Label()
-        self.loadingLabel.set_markup("<span size=\"25000\" weight=\"bold\">Calculating...</span>")
+        self.loadingLabel.set_markup("<span size=\"25000\" weight=\"bold\">" + lang.text_calculating + "</span>")
         self.boxLoading.set_margin_top(30)
         self.boxLoading.append(self.loadingLabel)
 
         #Cleaning Window Box:
         self.cleaningLabel = Gtk.Label()
-        self.cleaningLabel.set_markup("<span size=\"25000\" weight=\"bold\">Cleaning...</span>")
+        self.cleaningLabel.set_markup("<span size=\"25000\" weight=\"bold\">" + lang.text_cleaning + "</span>")
         self.boxCleaning.set_margin_top(30)
         self.boxCleaning.append(self.cleaningLabel)
 
         #Cleaned Window Box:
         self.cleanedLabel = Gtk.Label()
         self.cleanedLabel1 = Gtk.Label()
-        self.cleanedLabel1.set_markup("<span size=\"25000\" weight=\"bold\">MB saved.</span>")
+        self.cleanedLabel1.set_markup("<span size=\"25000\" weight=\"bold\">" + lang.text_mbSaved + "</span>")
         self.cleanedLabelErrors = Gtk.Label()
         self.boxCleaned.set_margin_top(30)
         self.boxCleaned.set_spacing(30)
@@ -70,37 +83,28 @@ class MainWindow(Gtk.ApplicationWindow):
 
         #No Leftovers Found Window Box:
         self.notFoundLabel = Gtk.Label()
-        self.notFoundLabel.set_markup("<span size=\"22000\" weight=\"bold\">No leftover data found.</span>")
+        self.notFoundLabel.set_markup("<span size=\"22000\" weight=\"bold\">" + lang.text_notFound + "</span>")
         self.boxNotFound.set_margin_top(80)
         self.boxNotFound.set_spacing(50)
         self.boxNotFound.append(self.notFoundLabel)
 
         #First Launch Warning Window Box
         self.firstLaunchLabel1 = Gtk.Label()
-        self.firstLaunchLabel1.set_markup("<span size=\"35000\" weight=\"bold\">Warning</span>")
-        self.firstLaunchLabel2 = Gtk.Label()
-        self.firstLaunchLabel2.set_markup("<span size=\"15000\">Flatsweep exclusively looks at the</span>")
-        self.firstLaunchLabel3 = Gtk.Label()
-        self.firstLaunchLabel3.set_markup("<span size=\"15000\">default Flatpak install directory.</span>")
-        self.firstLaunchLabel4 = Gtk.Label()
-        self.firstLaunchLabel4.set_markup("<span size=\"15000\">If you have a non-default Flatpak install</span>")
-        self.firstLaunchLabel5 = Gtk.Label()
-        self.firstLaunchLabel5.set_markup("<span size=\"15000\">directory, it might mark the data of</span>")
-        self.firstLaunchLabel6 = Gtk.Label()
-        self.firstLaunchLabel6.set_markup("<span size=\"15000\">currently installed Flatpaks for deletion.</span>")
-        self.firstLaunchLabel7 = Gtk.Label()
-        self.firstLaunchLabel7.set_markup("<span size=\"15000\">This message will not show up again.</span>")
-
+        self.firstLaunchLabel1.set_markup("<span size=\"35000\" weight=\"bold\">" + lang.text_warning + "</span>")
+        self.warningMessageWrapped = textwrap.wrap(lang.text_warningMessage, width=40, break_long_words=False)
         self.firstLaunchLabelsBox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        self.firstLaunchLabelsBox.append(self.firstLaunchLabel2)
-        self.firstLaunchLabelsBox.append(self.firstLaunchLabel3)
-        self.firstLaunchLabelsBox.append(self.firstLaunchLabel4)
-        self.firstLaunchLabelsBox.append(self.firstLaunchLabel5)
-        self.firstLaunchLabelsBox.append(self.firstLaunchLabel6)
+
+        self.warningMessageLabel = []
+        self.warningMessageLineIndex = 0
+        while (self.warningMessageLineIndex < len(self.warningMessageWrapped)):
+            self.warningMessageLabel.append(Gtk.Label())
+            self.warningMessageLabel[self.warningMessageLineIndex].set_markup("<span size=\"15000\">" + self.warningMessageWrapped[self.warningMessageLineIndex] + "</span>")
+            self.firstLaunchLabelsBox.append(self.warningMessageLabel[self.warningMessageLineIndex])
+            self.warningMessageLineIndex += 1
 
         self.firstLaunchButtonBox = Gtk.Box(spacing=100)
         self.firstLaunchButtonLabel = Gtk.Label()
-        self.firstLaunchButtonLabel.set_markup("<span size=\"25000\" weight=\"bold\">Understood</span>")
+        self.firstLaunchButtonLabel.set_markup("<span size=\"25000\" weight=\"bold\">" + lang.text_understood + "</span>")
         self.firstLaunchButtonBox.append(self.firstLaunchButtonLabel)
 
         self.firstLaunchButton = Gtk.Button(child=self.firstLaunchButtonBox)
@@ -116,14 +120,13 @@ class MainWindow(Gtk.ApplicationWindow):
 
         self.boxFirstLaunch.append(self.firstLaunchLabel1)
         self.boxFirstLaunch.append(self.firstLaunchLabelsBox)
-        self.boxFirstLaunch.append(self.firstLaunchLabel7)
         self.firstLaunchButtonBox2.append(self.firstLaunchButton)
         self.firstLaunchButtonBox1.append(self.firstLaunchButtonBox2)
         self.boxFirstLaunch.append(self.firstLaunchButtonBox1)
 
         #Main Window Box:
         self.label = Gtk.Label()
-        self.label.set_markup("<span size=\"25000\" weight=\"bold\">Leftover data amount:</span>")
+        self.label.set_markup("<span size=\"25000\" weight=\"bold\">" + lang.text_leftoverDataAmount + "</span>")
         self.box.set_margin_top(30)
         self.box.set_spacing(30)
         self.box.append(self.label)
@@ -145,7 +148,7 @@ class MainWindow(Gtk.ApplicationWindow):
 
         self.cleanbuttonBox = Gtk.Box(spacing=100)
         self.cleanbuttonLabel = Gtk.Label()
-        self.cleanbuttonLabel.set_markup("<span size=\"25000\" weight=\"bold\">Clean</span>")
+        self.cleanbuttonLabel.set_markup("<span size=\"25000\" weight=\"bold\">" + lang.text_clean + "</span>")
         self.cleanbuttonBox.append(self.cleanbuttonLabel)
         self.cleanbutton = Gtk.Button(child=self.cleanbuttonBox)
         self.cleanbutton.get_style_context().add_class("pill")
@@ -160,7 +163,7 @@ class MainWindow(Gtk.ApplicationWindow):
         self.toBeCleanedBox.set_spacing(10)
 
         self.toBeCleanedLabel = Gtk.Label()
-        self.toBeCleanedLabel.set_markup("To be cleaned:")
+        self.toBeCleanedLabel.set_markup(lang.text_toBeCleaned)
         self.toBeCleanedBox.append(self.toBeCleanedLabel)
         self.listBox = Gtk.ListBox(selection_mode = Gtk.SelectionMode.NONE)
         self.listBox.get_style_context().add_class("boxed-list")
@@ -225,13 +228,13 @@ class MainWindow(Gtk.ApplicationWindow):
     def show_about(self, app):
         dialog = Adw.AboutWindow(transient_for=self)
         dialog.set_application_name("Flatsweep")
-        dialog.set_version("v2023.8.2")
+        dialog.set_version(flatsweepVersion)
         dialog.set_developer_name("Giant Pink Robots!")
         dialog.set_license_type(Gtk.License(Gtk.License.MPL_2_0))
-        dialog.set_comments("Flatpak leftover cleaner")
+        dialog.set_comments(lang.text_aboutDialog_Comments)
         dialog.set_website("https://github.com/giantpinkrobots/flatsweep")
         dialog.set_issue_url("https://github.com/giantpinkrobots/flatsweep/issues")
-        dialog.set_copyright("2023 Giant Pink Robots!\n\nThe Flatsweep logo was created using the official Flatpak logo as a base, which is licensed under the Creative Commons Attribution 3.0 license. flatpak.org")
+        dialog.set_copyright("2023 Giant Pink Robots!\n\n" + lang.text_aboutDialog_Copyright)
         dialog.set_developers(["Giant Pink Robots!"])
         dialog.set_application_icon("io.github.giantpinkrobots.flatsweep")
         dialog.show()
@@ -262,7 +265,7 @@ class MainWindow(Gtk.ApplicationWindow):
         cleanedData = int(((cleanedData / 1024) / 1024) * 1.048576)
         self.cleanedLabel.set_markup("<span size=\"80000\" weight=\"bold\">" + str(cleanedData) + "</span>")
         if (self.deleteErrors == True):
-            self.cleanedLabelErrors.set_markup("<span size=\"15000\">Some files could not be deleted.</span>")
+            self.cleanedLabelErrors.set_markup("<span size=\"15000\">" + lang.text_cleanedWithErrors + "</span>")
         self.scroll.set_child(self.boxCleaned)
 
 class MyApp(Adw.Application):

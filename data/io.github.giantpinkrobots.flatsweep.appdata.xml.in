@@ -33,9 +33,9 @@ Caution: Flatsweep exclusively looks at the default Flatpak install directory. I
 </screenshots>
 
 <releases>
-<release version="v2023.8.2" date="2023-08-02">
+<release version="v2023.8.7" date="2023-08-07">
 <description>
-<p>Fixed the issue of the app getting stuck at "Calculating" if some folders don't exist.</p>
+<p>Turkish language support, and the app no longer depends on the network permission (because it never actually needed it in the first place).</p>
 </description>
 </release>
 </releases>
