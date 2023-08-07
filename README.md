@@ -1,10 +1,14 @@
 <p align="center"><img src="https://raw.githubusercontent.com/giantpinkrobots/flatsweep/052201fb59de4d6928479efe4646cd0d23bf2e33/screenshots/logo.svg" width=200 /></p>
 <h1 align="center">Flatsweep</h1>
 <h3 align="center">Flatpak leftover cleaner</h3>
-![](https://img.shields.io/github/forks/giantpinkrobots/flatsweep.svg)![](https://img.shields.io/github/stars/giantpinkrobots/flatsweep.svg)![](https://img.shields.io/github/watchers/giantpinkrobots/flatsweep.svg)![](https://img.shields.io/github/issues/giantpinkrobots/flatsweep.svg)![](https://img.shields.io/github/issues-closed/giantpinkrobots/flatsweep.svg)![](https://img.shields.io/github/issues-pr/giantpinkrobots/flatsweep.svg)![](https://img.shields.io/github/issues-pr-closed/giantpinkrobots/flatsweep.svg)![](https://img.shields.io/github/license/giantpinkrobots/flatsweep.svg)
 
-![](https://img.shields.io/github/followers/giantpinkrobots.svg?style=social&label=Follow&maxAge=2592000)
+<h3 align="center">
+    
+![](https://img.shields.io/github/followers/giantpinkrobots.svg?style=social&label=Follow&maxAge=2592000)  ![](https://img.shields.io/github/forks/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/stars/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/watchers/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues-closed/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues-pr/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues-pr-closed/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/license/giantpinkrobots/flatsweep.svg)
 
+</h3>
+
+<br>
 <br>
 
 <p align="center"><a href="https://flathub.org/apps/io.github.giantpinkrobots.flatsweep"><img src="https://dl.flathub.org/assets/badges/flathub-badge-i-en.svg" width=300 /></a></p>
