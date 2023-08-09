@@ -28,6 +28,7 @@ configure_file(
 
 flatsweep_sources = [
   'main.py',
+  'lang_bg.py',
   'lang_en.py',
   'lang_tr.py'
 ]
