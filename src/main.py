@@ -20,7 +20,9 @@ locale.setlocale(locale.LC_ALL, os.getenv("LANG"))
 currentLanguage = os.getenv("LANG")
 
 # TRANSLATIONS BEGIN
-if currentLanguage.startswith("tr"):
+if currentLanguage.startswith("bg"):
+    from flatsweep import lang_bg as lang
+elif currentLanguage.startswith("tr"):
     from flatsweep import lang_tr as lang
 else:
     from flatsweep import lang_en as lang
