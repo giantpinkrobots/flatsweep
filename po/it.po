@@ -1,0 +1,68 @@
+# Italian translation for Flatsweep.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Albano Battistella <albanobattistella@gmail.com>, 2023
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-06 00:01+0300\n"
+"PO-Revision-Date: 2023-08-11 15:18+0100\n"
+"Last-Translator: Albano Battistella <albanobattistella@gmail.com>\n"
+"Language-Team: Italian <>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#: data/io.github.giantpinkrobots.flatsweep.desktop.in:3
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:3
+msgid "Flatsweep"
+msgstr "Flatsweep"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:4
+msgid "Flatpak leftover cleaner"
+msgstr Pulitore per residui Flatpak"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:14
+msgid ""
+"When you uninstall a Flatpak, it can leave some files behind on your "
+"computer. Flatsweep helps you easily get rid of the residue left on your "
+"system by uninstalled Flatpaks."
+msgstr ""
+"Quando disinstalli un Flatpak, può lasciare alcuni file sul tuo "
+"computer. Flatsweep ti aiuta a sbarazzarti facilmente dei residui rimasti sul tuo "
+"sistema di Flatpaks disinstallati."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:17
+msgid ""
+"Flatsweep uses GTK4 and Libadwaita to provide a coherent user interface that "
+"integrates nicely with GNOME, but you can use it on any desktop environment "
+"of course."
+msgstr ""
+"Flatsweep utilizza GTK4 e Libadwaita per fornire un'interfaccia utente coerente che "
+"si integra bene con GNOME, ma puoi usarlo su qualsiasi ambiente desktop "
+"ovviamente." 
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:20
+msgid ""
+"Caution: Flatsweep exclusively looks at the default Flatpak install "
+"directory. If you have set a custom install path, it might accidentally "
+"delete files that weren't supposed to be deleted. If you have no idea what a "
+"'custom install path' is, you'll be fine."
+msgstr ""
+"Attenzione: Flatsweep esamina esclusivamente l'installazione predefinita dela directory dei "
+"Flatpak. Se hai impostato un percorso di installazione personalizzato, potrebbe accidentalmente "
+"elimina i file che non dovevano essere eliminati. Se non hai idea di cosa sia un "
+"percorso di installazione personalizzato, andrà tutto bene."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:38
+msgid ""
+"Fixed the issue of the app getting stuck at \"Calculating\" if some folders "
+"don't exist."
+msgstr ""
+"Risolto il problema per cui l'app si bloccava su \"Calcolo\" se alcune cartelle "
+"non esistono".
