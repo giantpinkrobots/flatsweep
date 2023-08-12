@@ -26,45 +26,6 @@
        horizontal_mirror="false"
        vertical_mirror="false"
        overflow_perspective="false" />
-    <inkscape:path-effect
-       effect="perspective-envelope"
-       up_left_point="134.32616,70.174368"
-       up_right_point="166.54205,51.944943"
-       down_left_point="134.16771,101.54204"
-       down_right_point="166.46984,84.509694"
-       id="path-effect23"
-       is_visible="true"
-       lpeversion="1"
-       deform_type="perspective"
-       horizontal_mirror="false"
-       vertical_mirror="false"
-       overflow_perspective="false" />
-    <inkscape:path-effect
-       effect="perspective-envelope"
-       up_left_point="72.651103,68.975796"
-       up_right_point="98.641016,53.970513"
-       down_left_point="72.651103,99.005283"
-       down_right_point="98.641016,84.000001"
-       id="path-effect17"
-       is_visible="true"
-       lpeversion="1"
-       deform_type="perspective"
-       horizontal_mirror="false"
-       vertical_mirror="false"
-       overflow_perspective="false" />
-    <inkscape:path-effect
-       effect="perspective-envelope"
-       up_left_point="78.413638,63.975002"
-       up_right_point="108.41364,63.975002"
-       down_left_point="78.413638,92.975003"
-       down_right_point="108.41364,92.975003"
-       id="path-effect16"
-       is_visible="true"
-       lpeversion="1"
-       deform_type="perspective"
-       horizontal_mirror="false"
-       vertical_mirror="false"
-       overflow_perspective="false" />
   </defs>
   <sodipodi:namedview
      id="namedview3"
@@ -76,8 +37,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:zoom="4"
-     inkscape:cx="33.625"
-     inkscape:cy="49.375"
+     inkscape:cx="48.375"
+     inkscape:cy="60.625"
      inkscape:window-width="1920"
      inkscape:window-height="1011"
      inkscape:window-x="0"
@@ -85,7 +46,7 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg3" />
   <rect
-     style="display:inline;fill:#1c71d8;fill-opacity:1;stroke:none;stroke-width:7.90332;stroke-linecap:square;stroke-linejoin:round"
+     style="display:inline;fill:#3269ae;fill-opacity:1;stroke:none;stroke-width:7.90332;stroke-linecap:square;stroke-linejoin:round"
      id="rect3"
      width="112"
      height="80"
@@ -95,7 +56,7 @@
      inkscape:label="Blue Background" />
   <path
      sodipodi:type="star"
-     style="display:inline;fill:#ed333b;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:square;stroke-linejoin:round"
+     style="display:inline;fill:#fb4d4d;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:square;stroke-linejoin:round"
      id="path4"
      inkscape:flatsided="true"
      sodipodi:sides="6"
