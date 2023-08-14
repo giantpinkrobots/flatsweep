@@ -1,12 +1,16 @@
-<p align="center"><img src="https://raw.githubusercontent.com/giantpinkrobots/flatsweep/052201fb59de4d6928479efe4646cd0d23bf2e33/screenshots/logo.svg" width=200 /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/giantpinkrobots/flatsweep/main/data/icons/io.github.giantpinkrobots.flatsweep.svg" width=200 /></p>
 <h1 align="center">Flatsweep</h1>
 <h3 align="center">Flatpak leftover cleaner</h3>
+<br>
 
-<h3 align="center">
-    
-![](https://img.shields.io/github/followers/giantpinkrobots.svg?style=social&label=Follow&maxAge=2592000)  ![](https://img.shields.io/github/forks/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/stars/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/watchers/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues-closed/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues-pr/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues-pr-closed/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/license/giantpinkrobots/flatsweep.svg)
+<p align="center">
+Supported languages:<br>
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/bg.svg" width=30 /> <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gb.svg" width=30 /> <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=30 />
+<br><br>
 
-</h3>
+![](https://img.shields.io/github/commits-since/giantpinkrobots/flatsweep/latest/main?label=commits%20since%20latest%20release)  ![](https://img.shields.io/github/forks/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/stars/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/watchers/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues-closed/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues-pr/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues-pr-closed/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/license/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/followers/giantpinkrobots.svg?style=social&label=Follow&maxAge=2592000)
+
+</p>
 
 <br>
 <br>
@@ -19,13 +23,14 @@ Flatsweep uses GTK4 and Libadwaita to provide a coherent user interface that int
 <p align="center"><img src="https://raw.githubusercontent.com/giantpinkrobots/flatsweep/main/screenshots/Screenshot-Flatsweep-1.png" width=500 /></p>
 Caution: Flatsweep exclusively looks at the default Flatpak install directory. If you have set a custom install path, it might accidentally delete files that weren't supposed to be deleted. If you have no idea what a 'custom install path' is, you'll be fine.
 
-
+<br>
+<br>
 
 ## Building
 
 Flatsweep was made with GNOME Builder, thus it is the program I recommend you to use when building it. Simply copying this repository into your system and opening it with GNOME Builder will allow you to build it with relative ease.
 
-
+<br>
 
 ## Contributing
 
@@ -89,8 +94,19 @@ That's all there is to it.
 
 You can also translate the appstream information. This is done within the "po" directory. You can use a program like Poedit to do this. After adding your language (e.g. es.po) you should also add the language line (e.g. es) into the "LINGUAS" file.
 
-
+<br>
 
 ## License
 
 [Flatsweep is licensed under the Mozilla Public License 2.0.](https://github.com/giantpinkrobots/flatsweep/blob/main/LICENSE)
+
+<br>
+
+## Credits
+
+- Logo polishing and remaking by [@M-Duardo](https://github.com/M-Duardo)
+- Bulgarian translations by [@RacerBG](https://github.com/RacerBG)
+- Italian translations by [@albanobattistella](https://github.com/albanobattistella)
+- Russian translations by [@vorons](https://github.com/vorons)
+
+

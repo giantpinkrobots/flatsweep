@@ -1,4 +1,4 @@
-flatsweepVersion = "v2023.8.7"
+flatsweepVersion = "v2023.8.14"
 
 import sys
 import gi
@@ -20,12 +20,14 @@ locale.setlocale(locale.LC_ALL, os.getenv("LANG"))
 currentLanguage = os.getenv("LANG")
 
 # TRANSLATIONS BEGIN
+
 if currentLanguage.startswith("bg"):
     from flatsweep import lang_bg as lang
 elif currentLanguage.startswith("tr"):
     from flatsweep import lang_tr as lang
 else:
     from flatsweep import lang_en as lang
+
 #TRANSLATIONS END
 
 class MainWindow(Gtk.ApplicationWindow):
@@ -59,6 +61,7 @@ class MainWindow(Gtk.ApplicationWindow):
         self.boxCleaned = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.boxNotFound = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.boxFirstLaunch = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.boxErrorScreen1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
         #Loading Window Box:
         self.loadingLabel = Gtk.Label()
@@ -75,7 +78,7 @@ class MainWindow(Gtk.ApplicationWindow):
         #Cleaned Window Box:
         self.cleanedLabel = Gtk.Label()
         self.cleanedLabel1 = Gtk.Label()
-        self.cleanedLabel1.set_markup("<span size=\"25000\" weight=\"bold\">" + lang.text_mbSaved + "</span>")
+        self.cleanedLabel1.set_markup("<span size=\"22000\" weight=\"bold\">" + lang.text_mbSaved + "</span>")
         self.cleanedLabelErrors = Gtk.Label()
         self.boxCleaned.set_margin_top(30)
         self.boxCleaned.set_spacing(30)
@@ -84,18 +87,25 @@ class MainWindow(Gtk.ApplicationWindow):
         self.boxCleaned.append(self.cleanedLabelErrors)
 
         #No Leftovers Found Window Box:
-        self.notFoundLabel = Gtk.Label()
-        self.notFoundLabel.set_markup("<span size=\"22000\" weight=\"bold\">" + lang.text_notFound + "</span>")
+        self.notFoundWrapped = textwrap.wrap(lang.text_notFound, width=20, break_long_words=False)
+        self.notFoundLabelsBox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.notFoundLabel = []
+        self.notFoundLineIndex = 0
+        while (self.notFoundLineIndex < len(self.notFoundWrapped)):
+            self.notFoundLabel.append(Gtk.Label())
+            self.notFoundLabel[self.notFoundLineIndex].set_markup("<span size=\"22000\">" + self.notFoundWrapped[self.notFoundLineIndex] + "</span>")
+            self.notFoundLabelsBox.append(self.notFoundLabel[self.notFoundLineIndex])
+            self.notFoundLineIndex += 1
         self.boxNotFound.set_margin_top(80)
         self.boxNotFound.set_spacing(50)
-        self.boxNotFound.append(self.notFoundLabel)
+        self.boxNotFound.append(self.notFoundLabelsBox)
 
         #First Launch Warning Window Box
         self.firstLaunchLabel1 = Gtk.Label()
         self.firstLaunchLabel1.set_markup("<span size=\"35000\" weight=\"bold\">" + lang.text_warning + "</span>")
+
         self.warningMessageWrapped = textwrap.wrap(lang.text_warningMessage, width=40, break_long_words=False)
         self.firstLaunchLabelsBox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-
         self.warningMessageLabel = []
         self.warningMessageLineIndex = 0
         while (self.warningMessageLineIndex < len(self.warningMessageWrapped)):
@@ -125,6 +135,26 @@ class MainWindow(Gtk.ApplicationWindow):
         self.firstLaunchButtonBox2.append(self.firstLaunchButton)
         self.firstLaunchButtonBox1.append(self.firstLaunchButtonBox2)
         self.boxFirstLaunch.append(self.firstLaunchButtonBox1)
+
+        #Can't Find Itself Error Box:
+        self.errorScreen1Label1 = Gtk.Label()
+        self.errorScreen1Label1.set_markup("<span size=\"35000\" weight=\"bold\">" + lang.text_error + "</span>")
+
+        self.errorScreen1Label2Wrapped = textwrap.wrap(lang.text_cantFindItself, width=40, break_long_words=False)
+        self.errorScreen1Label2Box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.errorScreen1Label2 = []
+        self.errorScreen1Label2LineIndex = 0
+        while (self.errorScreen1Label2LineIndex < len(self.errorScreen1Label2Wrapped)):
+            self.errorScreen1Label2.append(Gtk.Label())
+            self.errorScreen1Label2[self.errorScreen1Label2LineIndex].set_markup("<span size=\"15000\">" + self.errorScreen1Label2Wrapped[self.errorScreen1Label2LineIndex] + "</span>")
+            self.errorScreen1Label2Box.append(self.errorScreen1Label2[self.errorScreen1Label2LineIndex])
+            self.errorScreen1Label2LineIndex += 1
+
+        self.boxErrorScreen1.set_margin_top(80)
+        self.boxErrorScreen1.set_spacing(50)
+
+        self.boxErrorScreen1.append(self.errorScreen1Label1)
+        self.boxErrorScreen1.append(self.errorScreen1Label2Box)
 
         #Main Window Box:
         self.label = Gtk.Label()
@@ -193,6 +223,10 @@ class MainWindow(Gtk.ApplicationWindow):
             if (flatpak not in flatpakList):
                 flatpakList.append(flatpak)
 
+        if ("io.github.giantpinkrobots.flatsweep" not in flatpakList):
+            self.scroll.set_child(self.boxErrorScreen1)
+            exit()
+
         varApp = []
         if (os.path.exists(".var/app")):
             varApp = listdir(".var/app")
@@ -237,8 +271,9 @@ class MainWindow(Gtk.ApplicationWindow):
         dialog.set_website("https://github.com/giantpinkrobots/flatsweep")
         dialog.set_issue_url("https://github.com/giantpinkrobots/flatsweep/issues")
         dialog.set_copyright("2023 Giant Pink Robots!\n\n" + lang.text_aboutDialog_Copyright)
-        dialog.set_developers(["Giant Pink Robots!"])
+        dialog.set_developers(["Giant Pink Robots! (@giantpinkrobots) https://github.com/giantpinkrobots"])
         dialog.set_application_icon("io.github.giantpinkrobots.flatsweep")
+        dialog.set_translator_credits("\U0001F1E7\U0001F1EC   Georgi (@RacerBG) https://github.com/racerbg\n\U0001F1EE\U0001F1F9   albanobattistella (@albanobattistella) https://github.com/albanobattistella\n\U0001F1F7\U0001F1FA   Сергей Ворон (@vorons) https://github.com/vorons")
         dialog.show()
 
     def init_clean(self, app):

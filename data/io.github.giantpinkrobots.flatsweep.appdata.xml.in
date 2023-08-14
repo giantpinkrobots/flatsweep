@@ -33,9 +33,10 @@ Caution: Flatsweep exclusively looks at the default Flatpak install directory. I
 </screenshots>
 
 <releases>
-<release version="v2023.8.7" date="2023-08-07">
+<release version="v2023.8.14" date="2023-08-14">
 <description>
-<p>Turkish language support, and the app no longer depends on the network permission (because it never actually needed it in the first place).</p>
+<p>Bulgarian language support added (thanks @RacerBG on Github), alongside with a function that checks if there is most likely a custom Flatpak install directory set. Also the logo has been revamped to look more professional (thanks @M-Duardo on GitHub).
+</p>
 </description>
 </release>
 </releases>

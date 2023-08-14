@@ -11,3 +11,7 @@ text_toBeCleaned = "За почистване:"
 text_cleanedWithErrors = "Някои файлове не може да бъдат изтрити."
 text_aboutDialog_Comments = "Почистваща програма за Flatpak"
 text_aboutDialog_Copyright = "Логото на Flatsweep е базирано на оригиналното лого на Flatpak, което е лицензирано с Creative Commons Attribution 3.0. flatpak.org"
+# ⬇  Not translated  ⬇
+text_error = "Error"
+# ⬇  Not translated  ⬇
+text_cantFindItself = "Flatsweep can't find its own files in the default Flatpak install directory. That could mean you have set up a non-default one, in which case Flatsweep can't work properly."

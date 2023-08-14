@@ -25,7 +25,7 @@ msgstr "Flatsweep"
 
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:4
 msgid "Flatpak leftover cleaner"
-msgstr Pulitore per residui Flatpak"
+msgstr "Pulitore per residui Flatpak"
 
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:14
 msgid ""
@@ -65,4 +65,4 @@ msgid ""
 "don't exist."
 msgstr ""
 "Risolto il problema per cui l'app si bloccava su \"Calcolo\" se alcune cartelle "
-"non esistono".
+"non esistono."
