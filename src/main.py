@@ -25,6 +25,8 @@ if currentLanguage.startswith("bg"):
     from flatsweep import lang_bg as lang
 elif currentLanguage.startswith("tr"):
     from flatsweep import lang_tr as lang
+elif currentLanguage.startswith("es"):
+    from flatsweep import lang_es as lang
 else:
     from flatsweep import lang_en as lang
 
