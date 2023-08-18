@@ -5,9 +5,12 @@
 
 <p align="center">
 Supported languages:<br>
-<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/bg.svg" width=30 /> <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gb.svg" width=30 /> <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=30 />
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/bg.svg" width=30 /> <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=30 /> <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gb.svg" width=30 /> <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=30 />
+</p>
 <br><br>
 
+<p align="center">
+    
 ![](https://img.shields.io/github/commits-since/giantpinkrobots/flatsweep/latest/main?label=commits%20since%20latest%20release)  ![](https://img.shields.io/github/forks/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/stars/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/watchers/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues-closed/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues-pr/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/issues-pr-closed/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/license/giantpinkrobots/flatsweep.svg)  ![](https://img.shields.io/github/followers/giantpinkrobots.svg?style=social&label=Follow&maxAge=2592000)
 
 </p>
@@ -20,8 +23,21 @@ When you uninstall a Flatpak, it can leave some files behind on your computer. F
 <br><br>
 Flatsweep uses GTK4 and Libadwaita to provide a coherent user interface that integrates nicely with GNOME, but you can use it on any desktop environment of course.
 
+
 <p align="center"><img src="https://raw.githubusercontent.com/giantpinkrobots/flatsweep/main/screenshots/Screenshot-Flatsweep-1.png" width=500 /></p>
+
 Caution: Flatsweep exclusively looks at the default Flatpak install directory. If you have set a custom install path, it might accidentally delete files that weren't supposed to be deleted. If you have no idea what a 'custom install path' is, you'll be fine.
+
+<br>
+
+#### Translations:
+|  Language  |  Application  |  Appstream  |
+|------------|---------------|-------------|
+|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/bg.svg" width=20 />    Bulgarian|![86%](https://progress-bar.dev/86)|![100%](https://progress-bar.dev/100)|
+|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=20 />    Spanish|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
+|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/it.svg" width=20 />    Italian|![0%](https://progress-bar.dev/0)|![100%](https://progress-bar.dev/100)|
+|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/ru.svg" width=20 />    Russian|![0%](https://progress-bar.dev/0)|![100%](https://progress-bar.dev/100)|
+|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=20 />    Turkish|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 
 <br>
 <br>
@@ -104,9 +120,10 @@ You can also translate the appstream information. This is done within the "po" d
 
 ## Credits
 
-- Logo polishing and remaking by [@M-Duardo](https://github.com/M-Duardo)
+- Logo remaking and Spanish translations by [@M-Duardo](https://github.com/M-Duardo)
 - Bulgarian translations by [@RacerBG](https://github.com/RacerBG)
 - Italian translations by [@albanobattistella](https://github.com/albanobattistella)
 - Russian translations by [@vorons](https://github.com/vorons)
+
 
 

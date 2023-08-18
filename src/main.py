@@ -1,4 +1,4 @@
-flatsweepVersion = "v2023.8.14"
+flatsweepVersion = "v2023.8.18-test"
 
 import sys
 import gi
@@ -10,14 +10,20 @@ import shutil
 import threading
 import textwrap
 import locale
+from functools import partial
 
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
 from gi.repository import Gtk, Adw, GLib, Gio
 
-locale.setlocale(locale.LC_ALL, os.getenv("LANG"))
+try:
+    locale.setlocale(locale.LC_ALL, os.getenv("LANG"))
+except:
+    locale.setlocale(locale.LC_ALL, "en_US.UTF-8")
+
 currentLanguage = os.getenv("LANG")
+currentLanguage = "en_US"
 
 # TRANSLATIONS BEGIN
 
@@ -38,6 +44,7 @@ class MainWindow(Gtk.ApplicationWindow):
 
         self.leftoverDataSize = 0
         self.deleteErrors = False
+        self.listBoxSwitches = [[],[]]
 
         self.set_default_size(400, 600)
         self.set_size_request(400, 600)
@@ -234,6 +241,7 @@ class MainWindow(Gtk.ApplicationWindow):
             varApp = listdir(".var/app")
 
         self.leftoverData = []
+        self.leftoverDataFileSizes = []
 
         if (varApp != []):
             for existingDataDirectory in varApp:
@@ -242,13 +250,25 @@ class MainWindow(Gtk.ApplicationWindow):
                     and (os.path.exists(".var/app/" + existingDataDirectory + "/data"))
                     and (" " not in existingDataDirectory)
                     and (existingDataDirectory not in flatpakList)):
-                        self.leftoverDataSize += sum(foundFile.stat().st_size for foundFile in Path('.var/app/' + existingDataDirectory).glob('**/*') if foundFile.is_file())
+                        dataSize = sum(foundFile.stat().st_size for foundFile in Path('.var/app/' + existingDataDirectory).glob('**/*') if foundFile.is_file())
+                        self.leftoverDataSize += dataSize
+                        dataSize = int(((dataSize / 1024) / 1024) * 1.048576)
+                        self.leftoverDataFileSizes.append(dataSize)
                         if (existingDataDirectory not in self.leftoverData):
                             self.leftoverData.append(existingDataDirectory)
 
+        i = -1
         for folder in self.leftoverData:
-            self.listBoxRow = Adw.ActionRow(title = folder)
-            self.listBox.append(self.listBoxRow)
+            i += 1
+            self.listBoxSwitches.append([])
+            self.listBoxSwitches[i].append(Adw.ActionRow(title=folder + "  ", subtitle=str(self.leftoverDataFileSizes[i]) + "MB"))
+            self.listBoxSwitches[i][0].set_activatable(True)
+            self.listBoxSwitches[i][0].connect("activated", partial(self.openFolder, app=app, index=i))
+            self.listBoxSwitches[i][0].add_prefix(Gtk.Image.new_from_icon_name("folder-open"))
+            self.listBoxSwitches[i].append(Gtk.Switch(valign=Gtk.Align.CENTER))
+            self.listBoxSwitches[i][1].set_active(self)
+            self.listBoxSwitches[i][0].add_suffix(self.listBoxSwitches[i][1])
+            self.listBox.append(self.listBoxSwitches[i][0])
 
         self.leftoverDataSize = int(((self.leftoverDataSize / 1024) / 1024) * 1.048576)
         if (self.leftoverDataSize == 0):
@@ -256,6 +276,9 @@ class MainWindow(Gtk.ApplicationWindow):
         else:
             self.labelMB.set_markup("<span size=\"80000\" weight=\"bold\">" + str(self.leftoverDataSize) + "</span>")
             self.scroll.set_child(self.box)
+
+    def openFolder(self, row, app, index):
+        os.system("xdg-open " + os.path.realpath(".var/app/" + self.leftoverData[index]))
 
     def firstLaunchDone(self, app):
         open((os.getenv("XDG_DATA_HOME") + "/firstLaunchWarningDone"), 'a').close()
@@ -275,7 +298,7 @@ class MainWindow(Gtk.ApplicationWindow):
         dialog.set_copyright("2023 Giant Pink Robots!\n\n" + lang.text_aboutDialog_Copyright)
         dialog.set_developers(["Giant Pink Robots! (@giantpinkrobots) https://github.com/giantpinkrobots"])
         dialog.set_application_icon("io.github.giantpinkrobots.flatsweep")
-        dialog.set_translator_credits("\U0001F1E7\U0001F1EC   Georgi (@RacerBG) https://github.com/racerbg\n\U0001F1EE\U0001F1F9   albanobattistella (@albanobattistella) https://github.com/albanobattistella\n\U0001F1F7\U0001F1FA   Сергей Ворон (@vorons) https://github.com/vorons")
+        dialog.set_translator_credits("\U0001F1E7\U0001F1EC   Georgi (@RacerBG) https://github.com/racerbg\n\U0001F1EA\U0001F1F8   Ed M.A (@M-Duardo) https://github.com/M-Duardo\n\U0001F1EE\U0001F1F9   albanobattistella (@albanobattistella) https://github.com/albanobattistella\n\U0001F1F7\U0001F1FA   Сергей Ворон (@vorons) https://github.com/vorons")
         dialog.show()
 
     def init_clean(self, app):
@@ -285,21 +308,24 @@ class MainWindow(Gtk.ApplicationWindow):
 
     def clean(self, app):
         cleanedData = 0
+        i = 0
         for folder in self.leftoverData:
-            if (os.path.exists(".var/app/" + folder)):
-                try:
-                    dataSize = sum(foundFile.stat().st_size for foundFile in Path('.var/app/' + folder).glob('**/*') if foundFile.is_file())
-                    shutil.rmtree(".var/app/" + folder)
-                    cleanedData += dataSize
-                except:
-                    self.deleteErrors = True
-            if (os.path.exists(".local/share/flatpak/app/" + folder)):
-                try:
-                    dataSize = sum(foundFile.stat().st_size for foundFile in Path('.var/app/' + folder).glob('**/*') if foundFile.is_file())
-                    shutil.rmtree(".local/share/flatpak/app/" + folder)
-                    cleanedData += dataSize
-                except:
-                    self.deleteErrors = True
+            if (self.listBoxSwitches[i][1].get_active()):
+                if (os.path.exists(".var/app/" + folder)):
+                    try:
+                        dataSize = sum(foundFile.stat().st_size for foundFile in Path('.var/app/' + folder).glob('**/*') if foundFile.is_file())
+                        shutil.rmtree(".var/app/" + folder)
+                        cleanedData += dataSize
+                    except:
+                        self.deleteErrors = True
+                if (os.path.exists(".local/share/flatpak/app/" + folder)):
+                    try:
+                        dataSize = sum(foundFile.stat().st_size for foundFile in Path('.var/app/' + folder).glob('**/*') if foundFile.is_file())
+                        shutil.rmtree(".local/share/flatpak/app/" + folder)
+                        cleanedData += dataSize
+                    except:
+                        self.deleteErrors = True
+            i += 1
 
         cleanedData = int(((cleanedData / 1024) / 1024) * 1.048576)
         self.cleanedLabel.set_markup("<span size=\"80000\" weight=\"bold\">" + str(cleanedData) + "</span>")
