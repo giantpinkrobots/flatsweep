@@ -1,4 +1,4 @@
-flatsweepVersion = "v2023.8.18-test"
+flatsweepVersion = "v2023.8.19-test"
 
 import sys
 import gi
@@ -23,7 +23,6 @@ except:
     locale.setlocale(locale.LC_ALL, "en_US.UTF-8")
 
 currentLanguage = os.getenv("LANG")
-currentLanguage = "en_US"
 
 # TRANSLATIONS BEGIN
 
@@ -44,7 +43,7 @@ class MainWindow(Gtk.ApplicationWindow):
 
         self.leftoverDataSize = 0
         self.deleteErrors = False
-        self.listBoxSwitches = [[],[]]
+        self.listBoxCheckboxes = [[],[]]
 
         self.set_default_size(400, 600)
         self.set_size_request(400, 600)
@@ -260,15 +259,16 @@ class MainWindow(Gtk.ApplicationWindow):
         i = -1
         for folder in self.leftoverData:
             i += 1
-            self.listBoxSwitches.append([])
-            self.listBoxSwitches[i].append(Adw.ActionRow(title=folder + "  ", subtitle=str(self.leftoverDataFileSizes[i]) + "MB"))
-            self.listBoxSwitches[i][0].set_activatable(True)
-            self.listBoxSwitches[i][0].connect("activated", partial(self.openFolder, app=app, index=i))
-            self.listBoxSwitches[i][0].add_prefix(Gtk.Image.new_from_icon_name("folder-open"))
-            self.listBoxSwitches[i].append(Gtk.Switch(valign=Gtk.Align.CENTER))
-            self.listBoxSwitches[i][1].set_active(self)
-            self.listBoxSwitches[i][0].add_suffix(self.listBoxSwitches[i][1])
-            self.listBox.append(self.listBoxSwitches[i][0])
+            self.listBoxCheckboxes.append([])
+            self.listBoxCheckboxes[i].append(Adw.ActionRow(title=folder + "  ", subtitle=str(self.leftoverDataFileSizes[i]) + "MB"))
+            self.listBoxCheckboxes[i][0].set_size_request(370, -1)
+            self.listBoxCheckboxes[i][0].set_activatable(True)
+            self.listBoxCheckboxes[i][0].connect("activated", partial(self.openFolder, app=app, index=i))
+            self.listBoxCheckboxes[i][0].add_prefix(Gtk.Image.new_from_icon_name("folder-open-symbolic"))
+            self.listBoxCheckboxes[i].append(Gtk.CheckButton(valign=Gtk.Align.CENTER))
+            self.listBoxCheckboxes[i][1].set_active(self)
+            self.listBoxCheckboxes[i][0].add_suffix(self.listBoxCheckboxes[i][1])
+            self.listBox.append(self.listBoxCheckboxes[i][0])
 
         self.leftoverDataSize = int(((self.leftoverDataSize / 1024) / 1024) * 1.048576)
         if (self.leftoverDataSize == 0):
@@ -308,9 +308,10 @@ class MainWindow(Gtk.ApplicationWindow):
 
     def clean(self, app):
         cleanedData = 0
-        i = 0
+        i = -1
         for folder in self.leftoverData:
-            if (self.listBoxSwitches[i][1].get_active()):
+            i += 1
+            if (self.listBoxCheckboxes[i][1].get_active()):
                 if (os.path.exists(".var/app/" + folder)):
                     try:
                         dataSize = sum(foundFile.stat().st_size for foundFile in Path('.var/app/' + folder).glob('**/*') if foundFile.is_file())
@@ -325,7 +326,6 @@ class MainWindow(Gtk.ApplicationWindow):
                         cleanedData += dataSize
                     except:
                         self.deleteErrors = True
-            i += 1
 
         cleanedData = int(((cleanedData / 1024) / 1024) * 1.048576)
         self.cleanedLabel.set_markup("<span size=\"80000\" weight=\"bold\">" + str(cleanedData) + "</span>")
