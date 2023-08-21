@@ -1,4 +1,4 @@
-flatsweepVersion = "v2023.8.19-test"
+flatsweepVersion = "v2023.8.21"
 
 import sys
 import gi
@@ -71,42 +71,86 @@ class MainWindow(Gtk.ApplicationWindow):
         self.boxFirstLaunch = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.boxErrorScreen1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
+        self.loadingSpinner = Gtk.Spinner()
+        self.loadingSpinner.start()
+        self.cleaningSpinner = Gtk.Spinner()
+        self.cleaningSpinner.start()
+
         #Loading Window Box:
-        self.loadingLabel = Gtk.Label()
-        self.loadingLabel.set_markup("<span size=\"25000\" weight=\"bold\">" + lang.text_calculating + "</span>")
+        self.loadingPage = Adw.StatusPage()
+        self.loadingPage.set_icon_name("folder-symbolic")
+        self.loadingPage.set_title(lang.text_calculating)
+        self.loadingPage.set_child(self.loadingSpinner)
         self.boxLoading.set_margin_top(30)
-        self.boxLoading.append(self.loadingLabel)
+        self.boxLoading.append(self.loadingPage)
 
         #Cleaning Window Box:
-        self.cleaningLabel = Gtk.Label()
-        self.cleaningLabel.set_markup("<span size=\"25000\" weight=\"bold\">" + lang.text_cleaning + "</span>")
+        self.cleaningPage = Adw.StatusPage()
+        self.cleaningPage.set_icon_name("user-trash-symbolic")
+        self.cleaningPage.set_title(lang.text_cleaning)
+        self.cleaningPage.set_child(self.cleaningSpinner)
         self.boxCleaning.set_margin_top(30)
-        self.boxCleaning.append(self.cleaningLabel)
+        self.boxCleaning.append(self.cleaningPage)
 
         #Cleaned Window Box:
         self.cleanedLabel = Gtk.Label()
         self.cleanedLabel1 = Gtk.Label()
         self.cleanedLabel1.set_markup("<span size=\"22000\" weight=\"bold\">" + lang.text_mbSaved + "</span>")
         self.cleanedLabelErrors = Gtk.Label()
+
+        self.cleanedButtonBox1 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, halign = Gtk.Align.CENTER, valign = Gtk.Align.CENTER)
+        self.cleanedButtonBox2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, halign = Gtk.Align.CENTER, valign = Gtk.Align.CENTER)
+
+        self.cleanedButtonBox = Gtk.Box(spacing=100)
+        self.cleanedButtonIcon = Gtk.Image.new_from_icon_name("emblem-ok-symbolic")
+        self.cleanedButtonIcon.set_pixel_size(40)
+        self.cleanedButtonBox.append(self.cleanedButtonIcon)
+        self.cleanedButton = Gtk.Button(child=self.cleanedButtonBox)
+        self.cleanedButton.get_style_context().add_class("pill")
+        self.cleanedButton.get_style_context().add_class("suggested-action")
+        self.cleanedButton.connect("clicked", self.exitProgram)
+
+        self.cleanedButtonBox2.append(self.cleanedButton)
+        self.cleanedButtonBox1.append(self.cleanedButtonBox2)
+
         self.boxCleaned.set_margin_top(30)
         self.boxCleaned.set_spacing(30)
         self.boxCleaned.append(self.cleanedLabel)
         self.boxCleaned.append(self.cleanedLabel1)
         self.boxCleaned.append(self.cleanedLabelErrors)
+        self.boxCleaned.append(self.cleanedButtonBox1)
 
         #No Leftovers Found Window Box:
         self.notFoundWrapped = textwrap.wrap(lang.text_notFound, width=20, break_long_words=False)
         self.notFoundLabelsBox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.notFoundLabel = []
         self.notFoundLineIndex = 0
+
         while (self.notFoundLineIndex < len(self.notFoundWrapped)):
             self.notFoundLabel.append(Gtk.Label())
             self.notFoundLabel[self.notFoundLineIndex].set_markup("<span size=\"22000\">" + self.notFoundWrapped[self.notFoundLineIndex] + "</span>")
             self.notFoundLabelsBox.append(self.notFoundLabel[self.notFoundLineIndex])
             self.notFoundLineIndex += 1
+
+        self.okButtonBox1 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, halign = Gtk.Align.CENTER, valign = Gtk.Align.CENTER)
+        self.okButtonBox2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, halign = Gtk.Align.CENTER, valign = Gtk.Align.CENTER)
+
+        self.okButtonBox = Gtk.Box(spacing=100)
+        self.okButtonIcon = Gtk.Image.new_from_icon_name("emblem-ok-symbolic")
+        self.okButtonIcon.set_pixel_size(40)
+        self.okButtonBox.append(self.okButtonIcon)
+        self.okButton = Gtk.Button(child=self.okButtonBox)
+        self.okButton.get_style_context().add_class("pill")
+        self.okButton.get_style_context().add_class("suggested-action")
+        self.okButton.connect("clicked", self.exitProgram)
+
+        self.okButtonBox2.append(self.okButton)
+        self.okButtonBox1.append(self.okButtonBox2)
+
         self.boxNotFound.set_margin_top(80)
         self.boxNotFound.set_spacing(50)
         self.boxNotFound.append(self.notFoundLabelsBox)
+        self.boxNotFound.append(self.okButtonBox1)
 
         #First Launch Warning Window Box
         self.firstLaunchLabel1 = Gtk.Label()
@@ -256,6 +300,11 @@ class MainWindow(Gtk.ApplicationWindow):
                         if (existingDataDirectory not in self.leftoverData):
                             self.leftoverData.append(existingDataDirectory)
 
+        #Sort leftover data directories based on their size:
+        if (self.leftoverData != []):
+            leftoverDataZipped = sorted(zip(self.leftoverDataFileSizes, self.leftoverData), reverse=True)
+            self.leftoverDataFileSizes, self.leftoverData = zip(*leftoverDataZipped)
+
         i = -1
         for folder in self.leftoverData:
             i += 1
@@ -278,7 +327,7 @@ class MainWindow(Gtk.ApplicationWindow):
             self.scroll.set_child(self.box)
 
     def openFolder(self, row, app, index):
-        os.system("xdg-open " + os.path.realpath(".var/app/" + self.leftoverData[index]))
+        os.system("xdg-open " + os.path.realpath("\".var/app/" + self.leftoverData[index] + "\""))
 
     def firstLaunchDone(self, app):
         open((os.getenv("XDG_DATA_HOME") + "/firstLaunchWarningDone"), 'a').close()
@@ -332,6 +381,9 @@ class MainWindow(Gtk.ApplicationWindow):
         if (self.deleteErrors == True):
             self.cleanedLabelErrors.set_markup("<span size=\"15000\">" + lang.text_cleanedWithErrors + "</span>")
         self.scroll.set_child(self.boxCleaned)
+
+    def exitProgram(self, app):
+        self.destroy()
 
 class MyApp(Adw.Application):
     def __init__(self, **kwargs):
