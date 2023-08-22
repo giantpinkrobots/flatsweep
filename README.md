@@ -5,9 +5,10 @@
 
 <p align="center">
 Supported languages:<br>
-<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/bg.svg" width=30 /> <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=30 /> <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gb.svg" width=30 /> <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=30 />
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/bg.svg" width=30 />  <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=30 /> <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gb.svg" width=30 /> <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=30 />
 </p>
-<br><br>
+<p>If you want to translate Flatsweep into another language, please read the Translating section under Contributing. The .po files are only for the appstream, and not for the app itself.</p>
+<br>
 
 <p align="center">
     
@@ -34,6 +35,7 @@ Caution: Flatsweep exclusively looks at the default Flatpak install directory. I
 |  Language  |  Application  |  Appstream  |
 |------------|---------------|-------------|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/bg.svg" width=20 />    Bulgarian|![86%](https://progress-bar.dev/86)|![100%](https://progress-bar.dev/100)|
+|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/cz.svg" width=20 />    Czech|![0%](https://progress-bar.dev/0)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=20 />    Spanish|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/it.svg" width=20 />    Italian|![0%](https://progress-bar.dev/0)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/ru.svg" width=20 />    Russian|![0%](https://progress-bar.dev/0)|![100%](https://progress-bar.dev/100)|
