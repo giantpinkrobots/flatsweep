@@ -131,4 +131,5 @@ You can also translate the appstream information. This is done within the "po" d
 - Bulgarian translations by [@RacerBG](https://github.com/RacerBG)
 - Italian translations by [@albanobattistella](https://github.com/albanobattistella)
 - Russian translations by [@vorons](https://github.com/vorons)
+- Czech translations by [@Amerey](https://github.com/Amereyeu)
 - German translations by [@saxc](https://github.com/saxc)
