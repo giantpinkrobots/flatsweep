@@ -28,6 +28,8 @@ currentLanguage = os.getenv("LANG")
 
 if currentLanguage.startswith("bg"):
     from flatsweep import lang_bg as lang
+elif currentLanguage.startswith("de"):
+    from flatsweep import lang_de as lang
 elif currentLanguage.startswith("tr"):
     from flatsweep import lang_tr as lang
 elif currentLanguage.startswith("es"):
