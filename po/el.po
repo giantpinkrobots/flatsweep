@@ -1,0 +1,63 @@
+# Greek translation for Flatsweep.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Christos Georgiou Mousses <x.georgiou.mousses@gmail.com>, 2023
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-06 00:01+0300\n"
+"PO-Revision-Date: 2023-09-07 21:45+0300\n"
+"Last-Translator: Christos Georgiou Mousses <x.georgiou.mousses@gmail.com>\n"
+"Language-Team: Greek <x.georgiou.mousses@gmail.com>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.3.1\n"
+
+#: data/io.github.giantpinkrobots.flatsweep.desktop.in:3
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:3
+msgid "Flatsweep"
+msgstr "Flatsweep"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:4
+msgid "Flatpak leftover cleaner"
+msgstr "Καθαριστής υπολειπόμενων δεδομένων Flatpak"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:14
+msgid ""
+"When you uninstall a Flatpak, it can leave some files behind on your computer. Flatsweep helps "
+"you easily get rid of the residue left on your system by uninstalled Flatpaks."
+msgstr ""
+"Όταν απεγκαθιστάτε μια εφαρμογή Flatpak, μπορεί να αφεθούν κάποια αρχεία που δεν αφαιρέθηκαν "
+"από τον υπολογιστή σας. Η εφαρμογή Flatsweep σας βοηθά να ξεφορτωθείτε εύκολα τα υπολειπόμενα "
+"δεδομένα που αφέθηκαν στο σύστημά σας από απεγκατεστημένες εφαρμογές Flatpak."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:17
+msgid ""
+"Flatsweep uses GTK4 and Libadwaita to provide a coherent user interface that integrates nicely "
+"with GNOME, but you can use it on any desktop environment of course."
+msgstr ""
+"Η εφαρμογή Flatsweep χρησιμοποιεί τις βιβλιοθήκες GTK4 και Libadwaita για να προσφέρει μια "
+"διεπαφή χρήστη που ενσωματώνεται όμορφα με το περιβάλλον επιφάνειας εργασίας GNOME, αλλά "
+"μπορείτε φυσικά να τη χρησιμοποιήσετε σε οποιοδήποτε περιβάλλον."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:20
+msgid ""
+"Caution: Flatsweep exclusively looks at the default Flatpak install directory. If you have set "
+"a custom install path, it might accidentally delete files that weren't supposed to be deleted. "
+"If you have no idea what a 'custom install path' is, you'll be fine."
+msgstr ""
+"Προσοχή: Η εφαρμογή Flatsweep ελέγχει αποκλειστικά τον προεπιλεγμένο κατάλογο εγκαταστάσεων του "
+"Flatpak. Εάν έχετε ρυθμίσει κάποιο δικό σας μονοπάτι εγκατάστασης, υπάρχει περίπτωση να "
+"διαγραφούν αρχεία που δε θα έπρεπε να έχουν διαγραφεί. Εάν δεν γνωρίζετε τί είναι ένα 'μονοπάτι "
+"εγκατάστασης' αγνοήστε αυτό το μήνυμα."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:38
+msgid "Fixed the issue of the app getting stuck at \"Calculating\" if some folders don't exist."
+msgstr ""
+"Διορθώθηκε ένα λάθος όπου η εφαρμογή κολλούσε στην κατάσταση \"Υπολογισμός\" εάν κάποιοι "
+"φάκελοι δεν υπήρχαν."
