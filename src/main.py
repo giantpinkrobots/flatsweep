@@ -1,4 +1,4 @@
-flatsweepVersion = "v2023.8.21"
+flatsweepVersion = "v2023.9.8"
 
 import sys
 import gi
