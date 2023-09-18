@@ -1,4 +1,4 @@
-flatsweepVersion = "v2023.9.8"
+flatsweepVersion = "v2023.9.18"
 
 import sys
 import gi
@@ -355,7 +355,7 @@ class MainWindow(Gtk.ApplicationWindow):
         dialog.set_copyright("2023 Giant Pink Robots!\n\n" + lang.text_aboutDialog_Copyright)
         dialog.set_developers(["Giant Pink Robots! (@giantpinkrobots) https://github.com/giantpinkrobots"])
         dialog.set_application_icon("io.github.giantpinkrobots.flatsweep")
-        dialog.set_translator_credits("\U0001F1E7\U0001F1EC   Georgi (@RacerBG) https://github.com/racerbg\n\U0001F1E8\U0001F1FF   Amerey (@Amereyeu) https://github.com/amereyeu\n\U0001F1E9\U0001F1EA   saxc (@saxc) https://github.com/saxc\n\U0001F1EC\U0001F1F7   Christos Georgiou Mousses (@Christosgm) https://github.com/Christosgm\n\U0001F1EA\U0001F1F8   Ed M.A (@M-Duardo) https://github.com/M-Duardo\n\U0001F1EE\U0001F1F9   albanobattistella (@albanobattistella) https://github.com/albanobattistella\n\U0001F1F7\U0001F1FA   Сергей Ворон (@vorons) https://github.com/vorons")
+        dialog.set_translator_credits("\U0001F1E7\U0001F1EC   Georgi (@RacerBG) https://github.com/racerbg\n\U0001F1E8\U0001F1FF   Amerey (@Amereyeu) https://github.com/amereyeu\n\U0001F1E9\U0001F1EA   saxc (@saxc) https://github.com/saxc\n\U0001F1EC\U0001F1F7   Christos Georgiou Mousses (@Christosgm) https://github.com/Christosgm\n\U0001F1EA\U0001F1F8   Ed M.A (@M-Duardo) https://github.com/M-Duardo\n\U0001F1EE\U0001F1F9   albanobattistella (@albanobattistella) https://github.com/albanobattistella\n\U0001F1F7\U0001F1FA   Сергей Ворон (@vorons) https://github.com/vorons\n\U0001F1E8\U0001F1F3   适然(Sauntor) (@sauntor) https://github.com/sauntor")
         dialog.show()
 
     def init_clean(self, app):

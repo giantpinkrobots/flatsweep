@@ -33,11 +33,10 @@ Caution: Flatsweep exclusively looks at the default Flatpak install directory. I
 </screenshots>
 
 <releases>
-<release version="v2023.8.21" date="2023-08-21">
+<release version="v2023.9.18" date="2023-09-18">
 <description>
-<p>- You can now select which leftover data directories will be deleted and which ones will not.</p>
-<p>- Some design overhauls.</p>
-<p>- Spanish translation added (thanks @M-Duardo on GitHub).</p>
+<p>- Application now supports Russian (thanks to @vorons on GitHub)</p>
+<p>- Application now supports Chinese (thanks to @sauntor on GitHub)</p>
 </description>
 </release>
 </releases>
