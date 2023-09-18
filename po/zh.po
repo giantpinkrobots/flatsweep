@@ -1,0 +1,62 @@
+# Chinese translation for Flatsweep.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 适然 (Sauntor) <sauntor@live.com>, 2023
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-06 00:01+0300\n"
+"PO-Revision-Date: 2023-09-17 19:34+0800\n"
+"Last-Translator: \n"
+"Language-Team: 适然 (Sauntor) <sauntor@live.com>\n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: data/io.github.giantpinkrobots.flatsweep.desktop.in:3
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:3
+msgid "Flatsweep"
+msgstr ""
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:4
+msgid "Flatpak leftover cleaner"
+msgstr "Flatpak残留清理器"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:14
+msgid ""
+"When you uninstall a Flatpak, it can leave some files behind on your "
+"computer. Flatsweep helps you easily get rid of the residue left on your "
+"system by uninstalled Flatpaks."
+msgstr ""
+"当你卸载应用时Flatpak会遗留一些文件，Flatsweep可以让你快捷的清理掉这些文件。"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:17
+msgid ""
+"Flatsweep uses GTK4 and Libadwaita to provide a coherent user interface that "
+"integrates nicely with GNOME, but you can use it on any desktop environment "
+"of course."
+msgstr ""
+"Flatsweep为用户提供了一个基于GTK4和Libadwaita的简明便捷的操作界面，并很好的集"
+"成与GNOME，当然，其他桌面也可以使用。"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:20
+msgid ""
+"Caution: Flatsweep exclusively looks at the default Flatpak install "
+"directory. If you have set a custom install path, it might accidentally "
+"delete files that weren't supposed to be deleted. If you have no idea what a "
+"'custom install path' is, you'll be fine."
+msgstr ""
+"注意：Flatsweep仅适用默认Flatpak安装配置，若你修改了『默认应用安装位置』，此"
+"工具可能会有误删除操作。若你不知何为『默认应用安装位置』，那么不用操心，此时"
+"此工具会工作的很好。"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:38
+msgid ""
+"Fixed the issue of the app getting stuck at \"Calculating\" if some folders "
+"don't exist."
+msgstr "修复：计算『待清理』体积时应用卡住的问题。"
