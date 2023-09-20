@@ -11,6 +11,7 @@ Supported languages:<br>
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gr.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gb.svg" width=30 />
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/ru.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=30 />
 </p>
 <p>If you want to translate Flatsweep into another language, please read the Translating section under Contributing. The .po files are only for the appstream, and not for the app itself.</p>
