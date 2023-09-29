@@ -1,0 +1,74 @@
+# Polish translation for Flatsweep.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the flatsweep package.
+# Wojciech Roś <code@unsola.ci>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: flatsweep\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-29 23:07+0200\n"
+"PO-Revision-Date: 2023-09-30 01:20+0200\n"
+"Last-Translator: Wojciech Roś <code@unsola.ci>\n"
+"Language-Team: Polish <>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 45.1\n"
+
+#: data/io.github.giantpinkrobots.flatsweep.desktop.in:3
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:3
+msgid "Flatsweep"
+msgstr "Flatsweep"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:4
+msgid "Flatpak leftover cleaner"
+msgstr "Czyścik pozostałości flatpaków"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:14
+msgid ""
+"When you uninstall a Flatpak, it can leave some files behind on your "
+"computer. Flatsweep helps you easily get rid of the residue left on your "
+"system by uninstalled Flatpaks."
+msgstr ""
+"Odinstalowując aplikacje, Flatpak pozostawia niekiedy część plików na twoim "
+"komputerze. Flatsweep pomaga ci w łatwy sposób pozbyć się pozostałości "
+"odinstalowanych flatpaków z twojego systemu."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:17
+msgid ""
+"Flatsweep uses GTK4 and Libadwaita to provide a coherent user interface that "
+"integrates nicely with GNOME, but you can use it on any desktop environment "
+"of course."
+msgstr ""
+"Flatsweep wykorzystuje GTK4 i Libadwaita aby dostarczyć spójny interfejs "
+"użytkownika, który dobrze integruje się z GNOME, ale możesz oczywiście "
+"używać go w dowolnym środowisku graficznym."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:20
+msgid ""
+"Caution: Flatsweep exclusively looks at the default Flatpak install "
+"directory. If you have set a custom install path, it might accidentally "
+"delete files that weren't supposed to be deleted. If you have no idea what a "
+"'custom install path' is, you'll be fine."
+msgstr ""
+"Uwaga: Flatsweep sprawdza wyłącznie domyślny katalog instalacyjny Flatpak. "
+"Jeśli masz ustawioną niestandardową ścieżkę instalacji, może dojść do "
+"przypadkowego usunięcia plików, które nie miały zostać usunięte. Jeśli nie "
+"masz pojęcia, czym jest \"niestandardowa ścieżka instalacji\", nie masz się "
+"czego obawiać."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:38
+msgid "- Application now supports Russian (thanks to @vorons on GitHub)"
+msgstr ""
+"- Aplikacja obsługuje teraz język rosyjski (podziękowania dla @vorons na "
+"GitHubie)"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:39
+msgid "- Application now supports Chinese (thanks to @sauntor on GitHub)"
+msgstr ""
+"- Aplikacja obsługuje teraz język chiński (podziękowania dla @sauntor na "
+"GitHubie)"
