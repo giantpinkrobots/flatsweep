@@ -40,6 +40,8 @@ elif currentLanguage.startswith("ru"):
     from flatsweep import lang_ru as lang
 elif currentLanguage.startswith("zh"):
     from flatsweep import lang_zh as lang
+elif currentLanguage.startswith("pl"):
+    from flatsweep import lang_pl as lang
 else:
     from flatsweep import lang_en as lang
 
