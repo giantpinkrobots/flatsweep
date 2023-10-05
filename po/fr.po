@@ -1,0 +1,99 @@
+# Russian translation for Flatsweep.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Сергей Ворон <voron@duck.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-09 01:04+0300\n"
+"PO-Revision-Date: 2023-10-05 16:20+0200\n"
+"Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.2\n"
+"X-Poedit-Basepath: ../src\n"
+"X-Poedit-SearchPath-0: main.py\n"
+"X-Poedit-SearchPath-1: gtk/help-overlay.ui\n"
+
+#: data/io.github.giantpinkrobots.flatsweep.desktop.in:3
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:3
+msgid "Flatsweep"
+msgstr "Flatsweep"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:4
+msgid "Flatpak leftover cleaner"
+msgstr "Nettoyeur de fichiers résiduels Flatpak"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:14
+msgid ""
+"When you uninstall a Flatpak, it can leave some files behind on your "
+"computer. Flatsweep helps you easily get rid of the residue left on your "
+"system by uninstalled Flatpaks."
+msgstr ""
+"Lorsque vous désinstallez un logiciel empaqueté Flatpak, certains fichiers "
+"peuvent être laissés sur votre ordinateur. Flatsweep vous aide à "
+"débarrasser  facilement votre système des fichiers résiduels de Flatpaks "
+"désinstallés."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:17
+msgid ""
+"Flatsweep uses GTK4 and Libadwaita to provide a coherent user interface that "
+"integrates nicely with GNOME, but you can use it on any desktop environment "
+"of course."
+msgstr ""
+"Flatsweep utilise GTK4 et Libadwaita pour fournir une interface cohérente "
+"avec l’écosystème GNOME, mais bien sûr vous pouvez l’utiliser dans n’importe "
+"quel environnement de bureau."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:20
+msgid ""
+"Caution: Flatsweep exclusively looks at the default Flatpak install "
+"directory. If you have set a custom install path, it might accidentally "
+"delete files that weren't supposed to be deleted. If you have no idea what a "
+"'custom install path' is, you'll be fine."
+msgstr ""
+"Attention : Flatsweep inspecte exclusivement le répertoire d’installation "
+"Flatpak utilisé par défaut. Si vous avez défini un chemin d’accès "
+"personnalisé pour ce répertoire, d’autres fichiers pourraient être "
+"accidentellement effacés. Si vous n’avez aucune idée de ce qu’est un "
+"« chemin d’accès », vous n’avez pas à vous inquiéter."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:38
+msgid ""
+"- You can now select which leftover data directories will be deleted and "
+"which ones will not."
+msgstr ""
+"- Vous pouvez désormais sélectionner les répertoires de données résiduelles "
+"à effacer. "
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:39
+msgid "- Some design overhauls."
+msgstr "- Refontes du design"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:40
+msgid "- Spanish translation added (thanks @M-Duardo on GitHub)."
+msgstr ""
+"Ajout d’une traduction en espagnol (remerciement à @M-Duardo sur GitHub)."
+
+msgid ""
+"Bulgarian language support added (thanks @RacerBG on Github), alongside with "
+"a function that checks if there is most likely a custom Flatpak install "
+"directory set. Also the logo has been revamped to look more professional "
+"(thanks @M-Duardo on GitHub)."
+msgstr ""
+"Ajout de la prise en charge du bulgare (remerciement à @RacerBG sur Github), "
+"en même temps qu’une fonction vérifiant si un répertoire d’installation "
+"Flatpak personnalisé a pu être défini. Le logo a également été améliorer "
+"pour avoir l’air plus professionnel (remerciements à @M-Duardo sur GitHub)."
+
+msgid ""
+"Fixed the issue of the app getting stuck at \"Calculating\" if some folders "
+"don't exist."
+msgstr ""
+"Correction d’un bogue ou l’application restait bloquée à « Calcul… » quand "
+"certains dossiers n’existent pas."
