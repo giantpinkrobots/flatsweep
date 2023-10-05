@@ -1,2 +1,3 @@
-# Builder Folder
 .flatpak-builder
+.vscode
+.directory

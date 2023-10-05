@@ -11,6 +11,7 @@ Supported languages:<br>
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gr.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gb.svg" width=30 />
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/pl.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/ru.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=30 />
 </p>
@@ -48,6 +49,7 @@ Caution: Flatsweep exclusively looks at the default Flatpak install directory. I
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gr.svg" width=20 />    Greek|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=20 />    Spanish|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/it.svg" width=20 />    Italian|![0%](https://progress-bar.dev/0)|![100%](https://progress-bar.dev/100)|
+|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/pl.svg" width=20 />    Polish|![1000%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/ru.svg" width=20 />    Russian|![1000%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=20 />    Turkish|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 
@@ -140,4 +142,6 @@ You can also translate the appstream information. This is done within the "po" d
 - German translations by [@saxc](https://github.com/saxc)
 - Greek translations by [@Christosgm](https://github.com/Christosgm)
 - Chinese translations by [@sauntor](https://github.com/sauntor)
+- Polish translations by [@unsolaci](https://github.com/unsolaci)
+
 
