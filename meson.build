@@ -1,5 +1,5 @@
 project('flatsweep',
-          version: 'v2023.10.5',
+          version: 'v2023.10.10',
     meson_version: '>= 0.62.0',
   default_options: [ 'warning_level=2', 'werror=false', ],
 )

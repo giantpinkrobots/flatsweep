@@ -10,6 +10,7 @@ Supported languages:<br>
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/de.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gr.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=30 />
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/fr.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gb.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/pl.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/ru.svg" width=30 />
@@ -45,6 +46,7 @@ Caution: Flatsweep exclusively looks at the default Flatpak install directory. I
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/bg.svg" width=20 />    Bulgarian|![86%](https://progress-bar.dev/86)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/cn.svg" width=20 />    Chinese|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/cz.svg" width=20 />    Czech|![0%](https://progress-bar.dev/0)|![100%](https://progress-bar.dev/100)|
+|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/fr.svg" width=20 />    French|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/de.svg" width=20 />    German|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gr.svg" width=20 />    Greek|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=20 />    Spanish|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
