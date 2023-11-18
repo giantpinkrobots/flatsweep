@@ -26,7 +26,9 @@ currentLanguage = os.getenv("LANG")
 
 # TRANSLATIONS BEGIN
 
-if currentLanguage.startswith("bg"):
+if currentLanguage.startswith("be"):
+    from flatsweep import lang_be as lang
+elif currentLanguage.startswith("bg"):
     from flatsweep import lang_bg as lang
 elif currentLanguage.startswith("de"):
     from flatsweep import lang_de as lang
