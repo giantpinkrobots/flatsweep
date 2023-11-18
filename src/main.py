@@ -1,4 +1,4 @@
-flatsweepVersion = "v2023.10.10"
+flatsweepVersion = "v2023.11.18"
 
 import sys
 import gi
@@ -67,7 +67,8 @@ class MainWindow(Gtk.ApplicationWindow):
         self.set_title("Flatsweep")
         Gtk.Settings.get_default().set_property("gtk-icon-theme-name", "Adwaita")
 
-        self.header = Gtk.HeaderBar()
+        self.header = Adw.HeaderBar()
+        self.header.get_style_context().add_class('flat')
         self.set_titlebar(self.header)
 
         self.aboutButton = Gtk.Button(label="About")
