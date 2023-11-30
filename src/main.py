@@ -1,4 +1,4 @@
-flatsweepVersion = "v2023.11.18"
+flatsweepVersion = "v2023.11.30"
 
 import sys
 import gi
@@ -23,9 +23,9 @@ except:
     locale.setlocale(locale.LC_ALL, "en_US.UTF-8")
 
 currentLanguage = os.getenv("LANG")
+from flatsweep import lang_de as lang
 
 # TRANSLATIONS BEGIN
-
 if currentLanguage.startswith("be"):
     from flatsweep import lang_be as lang
 elif currentLanguage.startswith("bg"):
@@ -48,7 +48,6 @@ elif currentLanguage.startswith("fr"):
     from flatsweep import lang_fr as lang
 else:
     from flatsweep import lang_en as lang
-
 #TRANSLATIONS END
 
 class MainWindow(Gtk.ApplicationWindow):
@@ -224,11 +223,19 @@ class MainWindow(Gtk.ApplicationWindow):
         self.boxErrorScreen1.append(self.errorScreen1Label2Box)
 
         #Main Window Box:
-        self.label = Gtk.Label()
-        self.label.set_markup("<span size=\"25000\" weight=\"bold\">" + lang.text_leftoverDataAmount + "</span>")
+        self.mainLabelWrapped = textwrap.wrap(lang.text_leftoverDataAmount, width=20, break_long_words=False)
+        self.mainLabelBox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.mainLabel = []
+        self.mainLabelLineIndex = 0
+        while (self.mainLabelLineIndex < len(self.mainLabelWrapped)):
+            self.mainLabel.append(Gtk.Label())
+            self.mainLabel[self.mainLabelLineIndex].set_markup("<span size=\"25000\" weight=\"bold\">" + self.mainLabelWrapped[self.mainLabelLineIndex] + "</span>")
+            self.mainLabelBox.append(self.mainLabel[self.mainLabelLineIndex])
+            self.mainLabelLineIndex += 1
+
         self.box.set_margin_top(30)
         self.box.set_spacing(30)
-        self.box.append(self.label)
+        self.box.append(self.mainLabelBox)
 
         self.boxLabelMB = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.boxLabelMB.set_spacing(-30)
@@ -251,7 +258,7 @@ class MainWindow(Gtk.ApplicationWindow):
         self.cleanbuttonBox.append(self.cleanbuttonLabel)
         self.cleanbutton = Gtk.Button(child=self.cleanbuttonBox)
         self.cleanbutton.get_style_context().add_class("pill")
-        self.cleanbutton.get_style_context().add_class("suggested-action")
+        self.cleanbutton.get_style_context().add_class("destructive-action")
         self.cleanbutton.connect("clicked", self.init_clean)
 
         self.box3.append(self.cleanbutton)
@@ -362,7 +369,7 @@ class MainWindow(Gtk.ApplicationWindow):
         dialog.set_copyright("2023 Giant Pink Robots!\n\n" + lang.text_aboutDialog_Copyright)
         dialog.set_developers(["Giant Pink Robots! (@giantpinkrobots) https://github.com/giantpinkrobots"])
         dialog.set_application_icon("io.github.giantpinkrobots.flatsweep")
-        dialog.set_translator_credits("\U0001F1E7\U0001F1EC   Georgi (@RacerBG) https://github.com/racerbg\n\U0001F1E8\U0001F1FF   Amerey (@Amereyeu) https://github.com/amereyeu\n\U0001F1E9\U0001F1EA   saxc (@saxc) https://github.com/saxc\n\U0001F1EC\U0001F1F7   Christos Georgiou Mousses (@Christosgm) https://github.com/Christosgm\n\U0001F1EA\U0001F1F8   Ed M.A (@M-Duardo) https://github.com/M-Duardo\n\U0001F1EB\U0001F1F7   rene-coty (@rene-coty) https://github.com/rene-coty\n\U0001F1EE\U0001F1F9   albanobattistella (@albanobattistella) https://github.com/albanobattistella\n\U0001F1F5\U0001F1F1   unsolaci (@unsolaci) https://github.com/unsolaci\n\U0001F1F7\U0001F1FA   Сергей Ворон (@vorons) https://github.com/vorons\n\U0001F1E8\U0001F1F3   适然(Sauntor) (@sauntor) https://github.com/sauntor")
+        dialog.set_translator_credits("\U0001F1E7\U0001F1EC   Georgi (@RacerBG) https://github.com/racerbg\n\U0001F1E7\U0001F1FE   Yahor Haurylenka (@k1llo) https://github.com/k1llo\n\U0001F1E8\U0001F1FF   Amerey (@Amereyeu) https://github.com/amereyeu\n\U0001F1E9\U0001F1EA   saxc (@saxc) https://github.com/saxc\n\U0001F1EC\U0001F1F7   Christos Georgiou Mousses (@Christosgm) https://github.com/Christosgm\n\U0001F1EA\U0001F1F8   Ed M.A (@M-Duardo) https://github.com/M-Duardo\n\U0001F1EB\U0001F1F7   rene-coty (@rene-coty) https://github.com/rene-coty\n\U0001F1EE\U0001F1F9   albanobattistella (@albanobattistella) https://github.com/albanobattistella\n\U0001F1F5\U0001F1F1   unsolaci (@unsolaci) https://github.com/unsolaci\n\U0001F1F7\U0001F1FA   Сергей Ворон (@vorons) https://github.com/vorons\n\U0001F1E8\U0001F1F3   适然(Sauntor) (@sauntor) https://github.com/sauntor")
         dialog.show()
 
     def init_clean(self, app):
