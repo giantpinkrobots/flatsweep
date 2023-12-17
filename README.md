@@ -149,4 +149,5 @@ You can also translate the appstream information. This is done within the "po" d
 - Polish translations by [@unsolaci](https://github.com/unsolaci)
 - French translations by [@rene-coty](https://github.com/rene-coty)
 - Belarusian translations by [@k1llo](https://github.com/k1llo)
+- Brazilian Portuguese translations by [@mblithium](https://github.com/mblithium)
 

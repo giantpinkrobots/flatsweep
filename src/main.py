@@ -1,4 +1,4 @@
-flatsweepVersion = "v2023.11.30"
+flatsweepVersion = "v2023.12.17"
 
 import sys
 import gi
@@ -57,6 +57,7 @@ class MainWindow(Gtk.ApplicationWindow):
         self.leftoverDataSize = 0
         self.deleteErrors = False
         self.listBoxCheckboxes = [[],[]]
+        self.allCheckboxesUnchecked = False
 
         self.set_default_size(400, 600)
         self.set_size_request(400, 600)
@@ -267,13 +268,27 @@ class MainWindow(Gtk.ApplicationWindow):
 
         self.toBeCleanedBox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, halign = Gtk.Align.CENTER, valign = Gtk.Align.CENTER)
         self.toBeCleanedBox.set_spacing(10)
+        self.toBeCleanedLabelBox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, valign = Gtk.Align.CENTER)
+        self.toBeCleanedLabelBox.set_spacing(10)
+        self.toBeCleanedLabelBox.set_margin_start(10)
+        self.toBeCleanedLabelBox.set_margin_end(14)
 
         self.toBeCleanedLabel = Gtk.Label()
         self.toBeCleanedLabel.set_markup(lang.text_toBeCleaned)
-        self.toBeCleanedBox.append(self.toBeCleanedLabel)
+        self.toBeCleanedLabelExpandingBox = Gtk.Box()
+        Gtk.Widget.set_hexpand(self.toBeCleanedLabelExpandingBox, True)
+        self.toBeCleanedCheckboxAll = Gtk.CheckButton(valign=Gtk.Align.CENTER, halign=Gtk.Align.END)
+        self.toBeCleanedCheckboxAll.set_active(self)
+        self.toBeCleanedCheckboxAll.connect("toggled", self.toggleCheckboxes)
+        self.toBeCleanedLabelBox.append(self.toBeCleanedLabel)
+        self.toBeCleanedLabelBox.append(self.toBeCleanedLabelExpandingBox)
+        self.toBeCleanedLabelBox.append(self.toBeCleanedCheckboxAll)
+        self.toBeCleanedBox.append(self.toBeCleanedLabelBox)
+
         self.listBox = Gtk.ListBox(selection_mode = Gtk.SelectionMode.NONE)
         self.listBox.get_style_context().add_class("boxed-list")
         self.toBeCleanedBox.append(self.listBox)
+        self.toBeCleanedBox.set_margin_bottom(17)
         self.box.append(self.toBeCleanedBox)
 
         self.connect("realize", self.init_initiate)
@@ -338,6 +353,7 @@ class MainWindow(Gtk.ApplicationWindow):
             self.listBoxCheckboxes[i][0].add_prefix(Gtk.Image.new_from_icon_name("folder-open-symbolic"))
             self.listBoxCheckboxes[i].append(Gtk.CheckButton(valign=Gtk.Align.CENTER))
             self.listBoxCheckboxes[i][1].set_active(self)
+            self.listBoxCheckboxes[i][1].connect("toggled", self.ifAllCheckboxesUnchecked, app)
             self.listBoxCheckboxes[i][0].add_suffix(self.listBoxCheckboxes[i][1])
             self.listBox.append(self.listBoxCheckboxes[i][0])
 
@@ -347,6 +363,38 @@ class MainWindow(Gtk.ApplicationWindow):
         else:
             self.labelMB.set_markup("<span size=\"80000\" weight=\"bold\">" + str(self.leftoverDataSize) + "</span>")
             self.scroll.set_child(self.box)
+
+    def toggleCheckboxes(self, checkbox):
+        i = 0
+        if checkbox.get_active():
+            while (i < len(self.listBoxCheckboxes) - 2):
+                self.listBoxCheckboxes[i][1].set_active(True)
+                i += 1
+        else:
+            while (i < len(self.listBoxCheckboxes) - 2):
+                self.listBoxCheckboxes[i][1].set_active(False)
+                i += 1
+        self.connect("realize", self.ifAllCheckboxesUnchecked, checkbox)
+
+    def ifAllCheckboxesUnchecked(self, app, checkbox):
+        allCheckboxesUnchecked = True
+        allCheckboxesChecked = True
+        i = 0
+        while (i < len(self.listBoxCheckboxes) - 2):
+            if self.listBoxCheckboxes[i][1].get_active():
+                allCheckboxesUnchecked = False
+            if not self.listBoxCheckboxes[i][1].get_active():
+                allCheckboxesChecked = False
+            i += 1
+        if (allCheckboxesUnchecked == True):
+            self.cleanbutton.get_style_context().remove_class("destructive-action")
+            self.toBeCleanedCheckboxAll.set_active(False)
+            self.allCheckboxesUnchecked = True
+        else:
+            self.cleanbutton.get_style_context().add_class("destructive-action")
+            self.allCheckboxesUnchecked = False
+            if (allCheckboxesChecked == True):
+                self.toBeCleanedCheckboxAll.set_active(True)
 
     def openFolder(self, row, app, index):
         os.system("xdg-open " + os.path.realpath("\".var/app/" + self.leftoverData[index] + "\""))
@@ -369,13 +417,14 @@ class MainWindow(Gtk.ApplicationWindow):
         dialog.set_copyright("2023 Giant Pink Robots!\n\n" + lang.text_aboutDialog_Copyright)
         dialog.set_developers(["Giant Pink Robots! (@giantpinkrobots) https://github.com/giantpinkrobots"])
         dialog.set_application_icon("io.github.giantpinkrobots.flatsweep")
-        dialog.set_translator_credits("\U0001F1E7\U0001F1EC   Georgi (@RacerBG) https://github.com/racerbg\n\U0001F1E7\U0001F1FE   Yahor Haurylenka (@k1llo) https://github.com/k1llo\n\U0001F1E8\U0001F1FF   Amerey (@Amereyeu) https://github.com/amereyeu\n\U0001F1E9\U0001F1EA   saxc (@saxc) https://github.com/saxc\n\U0001F1EC\U0001F1F7   Christos Georgiou Mousses (@Christosgm) https://github.com/Christosgm\n\U0001F1EA\U0001F1F8   Ed M.A (@M-Duardo) https://github.com/M-Duardo\n\U0001F1EB\U0001F1F7   rene-coty (@rene-coty) https://github.com/rene-coty\n\U0001F1EE\U0001F1F9   albanobattistella (@albanobattistella) https://github.com/albanobattistella\n\U0001F1F5\U0001F1F1   unsolaci (@unsolaci) https://github.com/unsolaci\n\U0001F1F7\U0001F1FA   Сергей Ворон (@vorons) https://github.com/vorons\n\U0001F1E8\U0001F1F3   适然(Sauntor) (@sauntor) https://github.com/sauntor")
+        dialog.set_translator_credits("\U0001F1E7\U0001F1F7   Matheus Bastos (@mblithium) https://github.com/mblithium\n\U0001F1E7\U0001F1EC   Georgi (@RacerBG) https://github.com/racerbg\n\U0001F1E7\U0001F1FE   Yahor Haurylenka (@k1llo) https://github.com/k1llo\n\U0001F1E8\U0001F1FF   Amerey (@Amereyeu) https://github.com/amereyeu\n\U0001F1E9\U0001F1EA   saxc (@saxc) https://github.com/saxc\n\U0001F1EC\U0001F1F7   Christos Georgiou Mousses (@Christosgm) https://github.com/Christosgm\n\U0001F1EA\U0001F1F8   Ed M.A (@M-Duardo) https://github.com/M-Duardo\n\U0001F1EB\U0001F1F7   rene-coty (@rene-coty) https://github.com/rene-coty\n\U0001F1EE\U0001F1F9   albanobattistella (@albanobattistella) https://github.com/albanobattistella\n\U0001F1F5\U0001F1F1   unsolaci (@unsolaci) https://github.com/unsolaci\n\U0001F1F7\U0001F1FA   Сергей Ворон (@vorons) https://github.com/vorons\n\U0001F1E8\U0001F1F3   适然(Sauntor) (@sauntor) https://github.com/sauntor")
         dialog.show()
 
     def init_clean(self, app):
-        self.scroll.set_child(self.boxCleaning)
-        th = threading.Thread(target=self.clean, args=(app))
-        th.start()
+        if self.allCheckboxesUnchecked == False:
+            self.scroll.set_child(self.boxCleaning)
+            th = threading.Thread(target=self.clean, args=(app))
+            th.start()
 
     def clean(self, app):
         cleanedData = 0
