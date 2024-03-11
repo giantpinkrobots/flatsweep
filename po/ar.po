@@ -1,0 +1,66 @@
+# Arabic translation for Flatsweep.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the `flatsweep` package.
+# zefr0x <zer0-x.7ty50@aleeas.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: unnamed project\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-10 16:45+0300\n"
+"PO-Revision-Date: 2024-03-10 17:25+0300\n"
+"Last-Translator: zefr0x <zer0-x.7ty50@aleeas.com>\n"
+"Language-Team: Arabic <>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 45.3\n"
+"Plural-Forms: nplurals=6; plural= n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: data/io.github.giantpinkrobots.flatsweep.desktop.in:3
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:3
+msgid "Flatsweep"
+msgstr "فلاتسويب"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:4
+msgid "Flatpak leftover cleaner"
+msgstr "مُنظفُ بَقايَا حِزَم فلاتباك"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:14
+msgid ""
+"When you uninstall a Flatpak, it can leave some files behind on your "
+"computer. Flatsweep helps you easily get rid of the residue left on your "
+"system by uninstalled Flatpaks."
+msgstr ""
+"بعدَ إلغائِكَ لِتثبيتِ حِزَمِ فلاتباك، مِن المُمكِنِ أن تتبقى بعضُ المِلفات على حاسوبك. "
+"يُسَاعِدُكُ فلاتسويب على التخلُّصِ مِنها بِسُهُولَة."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:17
+msgid ""
+"Flatsweep uses GTK4 and Libadwaita to provide a coherent user interface that "
+"integrates nicely with GNOME, but you can use it on any desktop environment "
+"of course."
+msgstr ""
+"يعتمد فلاتسويب على GTK4 وLibadwaita لتوفير واجهة مستخدم متماسكة تتكامل بشكل "
+"جميل مع جنوم، ولكن مع ذلك بالطبع يمكنك استخدامه على أي بيئة سطح مكتب أٌخرى."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:20
+msgid ""
+"Caution: Flatsweep exclusively looks at the default Flatpak install "
+"directory. If you have set a custom install path, it might accidentally "
+"delete files that weren't supposed to be deleted. If you have no idea what a "
+"'custom install path' is, you'll be fine."
+msgstr ""
+"تنبيه: يبحث فلاتسويب حصريًا في مجلَّد تثبيتات فلاتباك الافتراضي. قَد يُؤدِّي تعيينك "
+"لِمجلَّدِ تثبيتٍ مُخصَّص إلى حذف ملفاتٍ لم يكن من المفترض حذفها عن طريق الخطأ. إذا لم "
+"تكن لديك أي فكرة عن \"مجلَّد التثبيت المخصص\"، فليس عليك القلق بشأنه."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:38
+msgid "- Added a select/deselect all button."
+msgstr "- أضفنا زر لتحديد الكل وآخر لإلغاء التحديد."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:39
+msgid "- Brazilian Portuguese language support. (by @mblithium on GitHub)"
+msgstr "- أُضيفت الترجمة الإسبانية (شكرًا لـ@M-Duardo على GitHub)."
