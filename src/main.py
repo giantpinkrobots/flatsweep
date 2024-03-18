@@ -46,6 +46,8 @@ elif currentLanguage.startswith("zh"):
     from flatsweep import lang_zh as lang
 elif currentLanguage.startswith("pl"):
     from flatsweep import lang_pl as lang
+elif currentLanguage.startswith("it"):
+    from flatsweep import lang_it as lang
 elif currentLanguage.startswith("fr"):
     from flatsweep import lang_fr as lang
 elif currentLanguage.startswith("pt_BR"):
