@@ -7,8 +7,15 @@
 <metadata_license>FSFAP</metadata_license>
 <project_license>MPL-2.0</project_license>
 
+<developer_name>Giant Pink Robots!</developer_name>
+
 <content_rating type="oars-1.1" />
 <url type="homepage">https://github.com/giantpinkrobots/flatsweep</url>
+
+<branding>
+<color type="primary" scheme_preference="light">#C6D5E9</color>
+<color type="primary" scheme_preference="dark">#172F4E</color>
+</branding>
 
 <description>
 <p>
@@ -33,10 +40,11 @@ Caution: Flatsweep exclusively looks at the default Flatpak install directory. I
 </screenshots>
 
 <releases>
-<release version="v2023.12.17" date="2023-12-17">
+<release version="v2024.3.20" date="2024-03-20">
 <description>
-<p>- Added a select/deselect all button.</p>
-<p>- Brazilian Portuguese language support. (by @mblithium on GitHub)</p>
+<p>- Update to GNOME 46 and Libadwaita 1.5.</p>
+<p>- Arabic language support.</p>
+<p>- Italian translations updated.</p>
 </description>
 </release>
 </releases>

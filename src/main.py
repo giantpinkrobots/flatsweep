@@ -1,4 +1,4 @@
-flatsweepVersion = "v2023.12.17"
+flatsweepVersion = "v2024.3.20"
 
 import sys
 import gi
@@ -23,7 +23,6 @@ except:
     locale.setlocale(locale.LC_ALL, "en_US.UTF-8")
 
 currentLanguage = os.getenv("LANG")
-from flatsweep import lang_de as lang
 
 # TRANSLATIONS BEGIN
 if currentLanguage.startswith("ar"):
@@ -56,8 +55,8 @@ else:
     from flatsweep import lang_en as lang
 #TRANSLATIONS END
 
-class MainWindow(Gtk.ApplicationWindow):
-    def __init__(self, *args, **kwargs):
+class MainWindow(Adw.ApplicationWindow):
+    def __init__(self, flatsweepapp, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.leftoverDataSize = 0
@@ -70,14 +69,18 @@ class MainWindow(Gtk.ApplicationWindow):
 
         self.scroll = Gtk.ScrolledWindow()
         self.scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
-        self.set_child(self.scroll)
 
         self.set_title("Flatsweep")
         Gtk.Settings.get_default().set_property("gtk-icon-theme-name", "Adwaita")
 
         self.header = Adw.HeaderBar()
         self.header.get_style_context().add_class('flat')
-        self.set_titlebar(self.header)
+
+        self.toolbar_view = Adw.ToolbarView()
+        self.toolbar_view.add_top_bar(self.header)
+        self.toolbar_view.set_content(self.scroll)
+
+        self.set_content(self.toolbar_view)
 
         self.aboutButton = Gtk.Button(label="About")
         self.header.pack_start(self.aboutButton)
@@ -129,7 +132,7 @@ class MainWindow(Gtk.ApplicationWindow):
         self.cleanedButton = Gtk.Button(child=self.cleanedButtonBox)
         self.cleanedButton.get_style_context().add_class("pill")
         self.cleanedButton.get_style_context().add_class("suggested-action")
-        self.cleanedButton.connect("clicked", self.exitProgram)
+        self.cleanedButton.connect("clicked", self.exitProgram, flatsweepapp)
 
         self.cleanedButtonBox2.append(self.cleanedButton)
         self.cleanedButtonBox1.append(self.cleanedButtonBox2)
@@ -163,7 +166,7 @@ class MainWindow(Gtk.ApplicationWindow):
         self.okButton = Gtk.Button(child=self.okButtonBox)
         self.okButton.get_style_context().add_class("pill")
         self.okButton.get_style_context().add_class("suggested-action")
-        self.okButton.connect("clicked", self.exitProgram)
+        self.okButton.connect("clicked", self.exitProgram, flatsweepapp)
 
         self.okButtonBox2.append(self.okButton)
         self.okButtonBox1.append(self.okButtonBox2)
@@ -412,7 +415,7 @@ class MainWindow(Gtk.ApplicationWindow):
         th.start()
 
     def show_about(self, app):
-        dialog = Adw.AboutWindow(transient_for=self)
+        dialog = Adw.AboutDialog()
         dialog.set_application_name("Flatsweep")
         dialog.set_version(flatsweepVersion)
         dialog.set_developer_name("Giant Pink Robots!")
@@ -423,8 +426,8 @@ class MainWindow(Gtk.ApplicationWindow):
         dialog.set_copyright("2023 Giant Pink Robots!\n\n" + lang.text_aboutDialog_Copyright)
         dialog.set_developers(["Giant Pink Robots! (@giantpinkrobots) https://github.com/giantpinkrobots"])
         dialog.set_application_icon("io.github.giantpinkrobots.flatsweep")
-        dialog.set_translator_credits("\U0001F1E7\U0001F1F7   Matheus Bastos (@mblithium) https://github.com/mblithium\n\U0001F1E7\U0001F1EC   Georgi (@RacerBG) https://github.com/racerbg\n\U0001F1E7\U0001F1FE   Yahor Haurylenka (@k1llo) https://github.com/k1llo\n\U0001F1E8\U0001F1FF   Amerey (@Amereyeu) https://github.com/amereyeu\n\U0001F1E9\U0001F1EA   saxc (@saxc) https://github.com/saxc\n\U0001F1EC\U0001F1F7   Christos Georgiou Mousses (@Christosgm) https://github.com/Christosgm\n\U0001F1EA\U0001F1F8   Ed M.A (@M-Duardo) https://github.com/M-Duardo\n\U0001F1EB\U0001F1F7   rene-coty (@rene-coty) https://github.com/rene-coty\n\U0001F1EE\U0001F1F9   albanobattistella (@albanobattistella) https://github.com/albanobattistella\n\U0001F1F5\U0001F1F1   unsolaci (@unsolaci) https://github.com/unsolaci\n\U0001F1F7\U0001F1FA   Сергей Ворон (@vorons) https://github.com/vorons\n\U0001F1E8\U0001F1F3   适然(Sauntor) (@sauntor) https://github.com/sauntor")
-        dialog.show()
+        dialog.set_translator_credits("\U0001F1F8\U0001F1E6   zefr0x (@zefr0x) https://github.com/zefr0x\n\U0001F1E7\U0001F1F7   Matheus Bastos (@mblithium) https://github.com/mblithium\n\U0001F1E7\U0001F1EC   Georgi (@RacerBG) https://github.com/racerbg\n\U0001F1E7\U0001F1FE   Yahor Haurylenka (@k1llo) https://github.com/k1llo\n\U0001F1E8\U0001F1FF   Amerey (@Amereyeu) https://github.com/amereyeu\n\U0001F1E9\U0001F1EA   saxc (@saxc) https://github.com/saxc\n\U0001F1EC\U0001F1F7   Christos Georgiou Mousses (@Christosgm) https://github.com/Christosgm\n\U0001F1EA\U0001F1F8   Ed M.A (@M-Duardo) https://github.com/M-Duardo\n\U0001F1EB\U0001F1F7   rene-coty (@rene-coty) https://github.com/rene-coty\n\U0001F1EE\U0001F1F9   albanobattistella (@albanobattistella) https://github.com/albanobattistella\n\U0001F1EE\U0001F1F9   Mia (@Methoko) https://github.com/Methoko\n\U0001F1F5\U0001F1F1   unsolaci (@unsolaci) https://github.com/unsolaci\n\U0001F1F7\U0001F1FA   Сергей Ворон (@vorons) https://github.com/vorons\n\U0001F1E8\U0001F1F3   适然(Sauntor) (@sauntor) https://github.com/sauntor")
+        dialog.present(self)
 
     def init_clean(self, app):
         if self.allCheckboxesUnchecked == False:
@@ -459,8 +462,9 @@ class MainWindow(Gtk.ApplicationWindow):
             self.cleanedLabelErrors.set_markup("<span size=\"15000\">" + lang.text_cleanedWithErrors + "</span>")
         self.scroll.set_child(self.boxCleaned)
 
-    def exitProgram(self, app):
+    def exitProgram(self, app, flatsweepapp):
         self.destroy()
+        flatsweepapp.quit()
 
 class MyApp(Adw.Application):
     def __init__(self, **kwargs):
@@ -468,7 +472,7 @@ class MyApp(Adw.Application):
         self.connect('activate', self.on_activate)
 
     def on_activate(self, app):
-        self.win = MainWindow(application=app)
+        self.win = MainWindow(application=app, flatsweepapp=self)
         self.win.present()
 
 def main(version):

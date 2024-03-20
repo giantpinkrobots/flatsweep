@@ -5,14 +5,16 @@
 
 <p align="center">
 Supported languages:<br>
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/arab.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/bg.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/by.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/cn.svg" width=30 />
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gb.svg" width=30 />
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/fr.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/de.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gr.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=30 />
-<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/fr.svg" width=30 />
-<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gb.svg" width=30 />
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/it.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/pl.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/ru.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=30 />
@@ -44,6 +46,7 @@ Caution: Flatsweep exclusively looks at the default Flatpak install directory. I
 #### Translations:
 |  Language  |  Application  |  Appstream  |
 |------------|---------------|-------------|
+|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/arab.svg" width=20 />    Arabic|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/bg.svg" width=20 />    Bulgarian|![86%](https://progress-bar.dev/86)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/by.svg" width=20 />    Belarusian|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/cn.svg" width=20 />    Chinese|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
@@ -52,7 +55,7 @@ Caution: Flatsweep exclusively looks at the default Flatpak install directory. I
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/de.svg" width=20 />    German|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gr.svg" width=20 />    Greek|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=20 />    Spanish|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
-|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/it.svg" width=20 />    Italian|![0%](https://progress-bar.dev/0)|![100%](https://progress-bar.dev/100)|
+|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/it.svg" width=20 />    Italian|![100%](https://progress-bar.dev/0)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/pl.svg" width=20 />    Polish|![1000%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/ru.svg" width=20 />    Russian|![1000%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
 |<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=20 />    Turkish|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
@@ -140,7 +143,7 @@ You can also translate the appstream information. This is done within the "po" d
 
 - Logo remaking and Spanish translations by [@M-Duardo](https://github.com/M-Duardo)
 - Bulgarian translations by [@RacerBG](https://github.com/RacerBG)
-- Italian translations by [@albanobattistella](https://github.com/albanobattistella)
+- Italian translations by [@albanobattistella](https://github.com/albanobattistella) and [@Methoko](https://github.com/Methoko)
 - Russian translations by [@vorons](https://github.com/vorons)
 - Czech translations by [@Amerey](https://github.com/Amereyeu)
 - German translations by [@saxc](https://github.com/saxc)
@@ -150,4 +153,5 @@ You can also translate the appstream information. This is done within the "po" d
 - French translations by [@rene-coty](https://github.com/rene-coty)
 - Belarusian translations by [@k1llo](https://github.com/k1llo)
 - Brazilian Portuguese translations by [@mblithium](https://github.com/mblithium)
+- Arabic translations by [@zefr0x](https://github.com/zefr0x)
 
