@@ -331,7 +331,7 @@ class MainWindow(Adw.ApplicationWindow):
 
         varApp = []
         if (os.path.exists(".var/app")):
-            varApp = listdir(".var/app")
+            varApp = [folder.name for folder in os.scandir(".var/app") if not folder.is_symlink()]
 
         self.leftoverData = []
         self.leftoverDataFileSizes = []
