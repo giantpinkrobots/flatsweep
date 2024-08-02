@@ -1,0 +1,60 @@
+# Portuguese (Portugal) translation for Flatsweep.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Tick Dracy <tick_dracy@tutanota.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Flatsweep\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-15 00:12-0500\n"
+"PO-Revision-Date: 2024-08-02 14:30+0100\n"
+"Last-Translator: Tick Dracy <tick_dracy@tutanota.com>\n"
+"Language-Team: \n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#: data/io.github.giantpinkrobots.flatsweep.desktop.in:3
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:3
+msgid "Flatsweep"
+msgstr "Flatsweep"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:4
+msgid "Flatpak leftover cleaner"
+msgstr "Utilitário limpeza de vestígios Flatpak"
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:22
+msgid ""
+"When you uninstall a Flatpak, it can leave some files behind on your "
+"computer. Flatsweep helps you easily get rid of the residue left on your "
+"system by uninstalled Flatpaks."
+msgstr ""
+"Ao remover um Flatpak, é comum que alguns arquivos não sejam removidos. "
+"Flatsweep ajuda-o a remover esses vestígios, que ficaram para trás após a "
+"remoção dos Flatpaks."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:25
+msgid ""
+"Flatsweep uses GTK4 and Libadwaita to provide a coherent user interface that "
+"integrates nicely with GNOME, but you can use it on any desktop environment "
+"of course."
+msgstr ""
+"Flatsweep utiliza GTK4 e Libadwaita para fornecer uma interface gráfica "
+"coesiva que se integra de forma eficiente com GNOME, mas também pode ser "
+"utilizada em outros ambientes gráficos."
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:28
+msgid ""
+"Caution: Flatsweep exclusively looks at the default Flatpak install "
+"directory. If you have set a custom install path, it might accidentally "
+"delete files that weren't supposed to be deleted. If you have no idea what a "
+"'custom install path' is, you'll be fine."
+msgstr ""
+"Atenção: Flatsweep analisa exclusivamente o diretório padrão de instalação "
+"dos Flatpak. Caso tenha definido um diretório personalizado, arrisca apagar "
+"acidentalmente ficheiros que não era suposto serem removidos. Caso não saiba "
+"o que significa 'diretório de instalação personalizado', não haverá nenhum "
+"problema."

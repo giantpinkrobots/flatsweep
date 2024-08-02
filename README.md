@@ -18,6 +18,7 @@ Supported languages:<br>
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/pl.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/ru.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=30 />
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/pt.svg" width=30 />
 </p>
 <p>If you want to translate Flatsweep into another language, please read the Translating section under Contributing. The .po files are only for the appstream, and not for the app itself.</p>
 <br>
@@ -36,7 +37,6 @@ When you uninstall a Flatpak, it can leave some files behind on your computer. F
 <br><br>
 Flatsweep uses GTK4 and Libadwaita to provide a coherent user interface that integrates nicely with GNOME, but you can use it on any desktop environment of course.
 
-
 <p align="center"><img src="https://raw.githubusercontent.com/giantpinkrobots/flatsweep/main/screenshots/Screenshot-Flatsweep-1.png" width=500 /></p>
 
 Caution: Flatsweep exclusively looks at the default Flatpak install directory. If you have set a custom install path, it might accidentally delete files that weren't supposed to be deleted. If you have no idea what a 'custom install path' is, you'll be fine.
@@ -44,21 +44,23 @@ Caution: Flatsweep exclusively looks at the default Flatpak install directory. I
 <br>
 
 #### Translations:
-|  Language  |  Application  |  Appstream  |
-|------------|---------------|-------------|
-|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/arab.svg" width=20 />    Arabic|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
-|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/bg.svg" width=20 />    Bulgarian|![86%](https://progress-bar.dev/86)|![100%](https://progress-bar.dev/100)|
-|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/by.svg" width=20 />    Belarusian|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
-|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/cn.svg" width=20 />    Chinese|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
-|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/cz.svg" width=20 />    Czech|![0%](https://progress-bar.dev/0)|![100%](https://progress-bar.dev/100)|
-|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/fr.svg" width=20 />    French|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
-|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/de.svg" width=20 />    German|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
-|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gr.svg" width=20 />    Greek|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
-|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=20 />    Spanish|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
-|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/it.svg" width=20 />    Italian|![100%](https://progress-bar.dev/0)|![100%](https://progress-bar.dev/100)|
-|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/pl.svg" width=20 />    Polish|![1000%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
-|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/ru.svg" width=20 />    Russian|![1000%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
-|<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=20 />    Turkish|![100%](https://progress-bar.dev/100)|![100%](https://progress-bar.dev/100)|
+
+| Language                                                                                                      | Application                            | Appstream                             |
+| ------------------------------------------------------------------------------------------------------------- | -------------------------------------- | ------------------------------------- |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/arab.svg" width=20 />    Arabic              | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/bg.svg" width=20 />    Bulgarian             | ![86%](https://progress-bar.dev/86)    | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/by.svg" width=20 />    Belarusian            | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/cn.svg" width=20 />    Chinese               | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/cz.svg" width=20 />    Czech                 | ![0%](https://progress-bar.dev/0)      | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/fr.svg" width=20 />    French                | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/de.svg" width=20 />    German                | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gr.svg" width=20 />    Greek                 | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=20 />    Spanish               | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/it.svg" width=20 />    Italian               | ![100%](https://progress-bar.dev/0)    | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/pl.svg" width=20 />    Polish                | ![1000%](https://progress-bar.dev/100) | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/ru.svg" width=20 />    Russian               | ![1000%](https://progress-bar.dev/100) | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=20 />    Turkish               | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/pt.svg" width=20 />    Portuguese (Portugal) | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
 
 <br>
 <br>
@@ -154,4 +156,6 @@ You can also translate the appstream information. This is done within the "po" d
 - Belarusian translations by [@k1llo](https://github.com/k1llo)
 - Brazilian Portuguese translations by [@mblithium](https://github.com/mblithium)
 - Arabic translations by [@zefr0x](https://github.com/zefr0x)
+- Portuguese translations by [@TickDracy](https://github.com/TickDracy)
+
 
