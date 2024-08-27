@@ -1,6 +1,8 @@
 [Desktop Entry]
 Name=Flatsweep
 Exec=flatsweep
+Comment=Flatpak leftover cleaner
+GenericName=Flatpak leftover cleaner
 Icon=io.github.giantpinkrobots.flatsweep
 Terminal=false
 Type=Application
