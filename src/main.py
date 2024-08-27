@@ -53,6 +53,8 @@ elif currentLanguage.startswith("pt_BR"):
     from flatsweep import lang_pt_BR as lang
 elif currentLanguage.startswith("vi"):
     from flatsweep import lang_vi as lang
+elif currentLanguage.startswith("pt_PT"):
+    from flatsweep import lang_pt_PT as lang
 else:
     from flatsweep import lang_en as lang
 #TRANSLATIONS END
@@ -329,7 +331,7 @@ class MainWindow(Adw.ApplicationWindow):
 
         varApp = []
         if (os.path.exists(".var/app")):
-            varApp = listdir(".var/app")
+            varApp = [folder.name for folder in os.scandir(".var/app") if not folder.is_symlink()]
 
         self.leftoverData = []
         self.leftoverDataFileSizes = []
