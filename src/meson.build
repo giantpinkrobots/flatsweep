@@ -43,7 +43,7 @@ flatsweep_sources = [
   'lang_ar.py',
   'lang_it.py',
   'lang_vi.py',
-  'lang_pt_PT.py'
+  'lang_pt_PT.py',
   'lang_sk.py'
 ]
 

@@ -7,6 +7,7 @@
 Supported languages:<br>
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/arab.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/bg.svg" width=30 />
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/br.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/by.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/cn.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/gb.svg" width=30 />
@@ -16,9 +17,11 @@ Supported languages:<br>
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/it.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/pl.svg" width=30 />
-<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/ru.svg" width=30 />
-<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=30 />
 <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/pt.svg" width=30 />
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/ru.svg" width=30 />
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/sk.svg" width=30 />
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=30 />
+<img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/vn.svg" width=30 />
 </p>
 <p>If you want to translate Flatsweep into another language, please read the Translating section under Contributing. The .po files are only for the appstream, and not for the app itself.</p>
 <br>
@@ -58,9 +61,12 @@ Caution: Flatsweep exclusively looks at the default Flatpak install directory. I
 | <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/es.svg" width=20 />    Spanish               | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
 | <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/it.svg" width=20 />    Italian               | ![100%](https://progress-bar.dev/0)    | ![100%](https://progress-bar.dev/100) |
 | <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/pl.svg" width=20 />    Polish                | ![1000%](https://progress-bar.dev/100) | ![100%](https://progress-bar.dev/100) |
-| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/ru.svg" width=20 />    Russian               | ![1000%](https://progress-bar.dev/100) | ![100%](https://progress-bar.dev/100) |
-| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=20 />    Turkish               | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/br.svg" width=20 />    Portuguese (Brazil) | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
 | <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/pt.svg" width=20 />    Portuguese (Portugal) | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/ru.svg" width=20 />    Russian               | ![1000%](https://progress-bar.dev/100) | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/sk.svg" width=20 />    Slovak                | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/tr.svg" width=20 />    Turkish               | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
+| <img src="https://github.com/lipis/flag-icons/raw/main/flags/4x3/vn.svg" width=20 />    Vietnamese | ![100%](https://progress-bar.dev/100)  | ![100%](https://progress-bar.dev/100) |
 
 <br>
 <br>
@@ -157,5 +163,5 @@ You can also translate the appstream information. This is done within the "po" d
 - Brazilian Portuguese translations by [@mblithium](https://github.com/mblithium)
 - Arabic translations by [@zefr0x](https://github.com/zefr0x)
 - Portuguese translations by [@TickDracy](https://github.com/TickDracy)
-
-
+- Vietnamese translations by [@ntxinh](https://github.com/ntxinh)
+- Slovak translations by [@dodog](https://github.com/dodog)
