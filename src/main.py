@@ -55,6 +55,8 @@ elif currentLanguage.startswith("vi"):
     from flatsweep import lang_vi as lang
 elif currentLanguage.startswith("pt_PT"):
     from flatsweep import lang_pt_PT as lang
+elif currentLanguage.startswith("sk"):
+    from flatsweep import lang_pt_PT as lang
 else:
     from flatsweep import lang_en as lang
 #TRANSLATIONS END
