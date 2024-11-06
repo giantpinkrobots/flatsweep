@@ -71,6 +71,7 @@ class MainWindow(Adw.ApplicationWindow):
 
         self.set_default_size(400, 600)
         self.set_size_request(400, 600)
+        self.set_resizable(False)
 
         self.scroll = Gtk.ScrolledWindow()
         self.scroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
@@ -401,11 +402,11 @@ class MainWindow(Adw.ApplicationWindow):
                 allCheckboxesChecked = False
             i += 1
         if (allCheckboxesUnchecked == True):
-            self.cleanbutton.get_style_context().remove_class("destructive-action")
+            self.cleanbutton.set_sensitive(False)
             self.toBeCleanedCheckboxAll.set_active(False)
             self.allCheckboxesUnchecked = True
         else:
-            self.cleanbutton.get_style_context().add_class("destructive-action")
+            self.cleanbutton.set_sensitive(True)
             self.allCheckboxesUnchecked = False
             if (allCheckboxesChecked == True):
                 self.toBeCleanedCheckboxAll.set_active(True)
