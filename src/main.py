@@ -1,4 +1,4 @@
-flatsweepVersion = "v2024.3.20"
+flatsweepVersion = "v2024.12.23"
 
 import sys
 import gi
@@ -432,7 +432,24 @@ class MainWindow(Adw.ApplicationWindow):
         dialog.set_copyright("2023 Giant Pink Robots!\n\n" + lang.text_aboutDialog_Copyright)
         dialog.set_developers(["Giant Pink Robots! (@giantpinkrobots) https://github.com/giantpinkrobots"])
         dialog.set_application_icon("io.github.giantpinkrobots.flatsweep")
-        dialog.set_translator_credits("\U0001F1F8\U0001F1E6   zefr0x (@zefr0x) https://github.com/zefr0x\n\U0001F1E7\U0001F1F7   Matheus Bastos (@mblithium) https://github.com/mblithium\n\U0001F1F5\U0001F1F9   TickDracy (@TickDracy) https://github.com/TickDracy\n\U0001F1E7\U0001F1EC   Georgi (@RacerBG) https://github.com/racerbg\n\U0001F1E7\U0001F1FE   Yahor Haurylenka (@k1llo) https://github.com/k1llo\n\U0001F1E8\U0001F1FF   Amerey (@Amereyeu) https://github.com/amereyeu\n\U0001F1E9\U0001F1EA   saxc (@saxc) https://github.com/saxc\n\U0001F1EC\U0001F1F7   Christos Georgiou Mousses (@Christosgm) https://github.com/Christosgm\n\U0001F1EA\U0001F1F8   Ed M.A (@M-Duardo) https://github.com/M-Duardo\n\U0001F1EB\U0001F1F7   rene-coty (@rene-coty) https://github.com/rene-coty\n\U0001F1EE\U0001F1F9   albanobattistella (@albanobattistella) https://github.com/albanobattistella\n\U0001F1EE\U0001F1F9   Mia (@Methoko) https://github.com/Methoko\n\U0001F1F5\U0001F1F1   unsolaci (@unsolaci) https://github.com/unsolaci\n\U0001F1F7\U0001F1FA   Сергей Ворон (@vorons) https://github.com/vorons\n\U0001F1F8\U0001F1F0   Jozef Gaal (@dodog) https://github.com/dodog\n\U0001F1F9\U0001F1F7   Giant Pink Robots! (@giantpinkrobots) https://github.com/giantpinkrobots\n\U0001F1FB\U0001F1F3   Xinh Nguyen (@ntxinh) https://github.com/ntxinh\n\U0001F1E8\U0001F1F3   适然(Sauntor) (@sauntor) https://github.com/sauntor")
+        dialog.set_translator_credits("\U0001F1F8\U0001F1E6   zefr0x (@zefr0x) https://github.com/zefr0x\n\
+            \U0001F1E7\U0001F1F7   Matheus Bastos (@mblithium) https://github.com/mblithium\n\
+            \U0001F1F5\U0001F1F9   TickDracy (@TickDracy) https://github.com/TickDracy\n\
+            \U0001F1E7\U0001F1EC   Georgi (@RacerBG) https://github.com/racerbg\n\
+            \U0001F1E7\U0001F1FE   Yahor Haurylenka (@k1llo) https://github.com/k1llo\n\
+            \U0001F1E8\U0001F1FF   Amerey (@Amereyeu) https://github.com/amereyeu\n\
+            \U0001F1E9\U0001F1EA   saxc (@saxc) https://github.com/saxc\n\
+            \U0001F1EC\U0001F1F7   Christos Georgiou Mousses (@Christosgm) https://github.com/Christosgm\n\
+            \U0001F1EA\U0001F1F8   Ed M.A (@M-Duardo) https://github.com/M-Duardo\n\
+            \U0001F1EB\U0001F1F7   rene-coty (@rene-coty) https://github.com/rene-coty\n\
+            \U0001F1EE\U0001F1F9   albanobattistella (@albanobattistella) https://github.com/albanobattistella\n\
+            \U0001F1EE\U0001F1F9   Mia (@Methoko) https://github.com/Methoko\n\
+            \U0001F1F5\U0001F1F1   unsolaci (@unsolaci) https://github.com/unsolaci\n\
+            \U0001F1F7\U0001F1FA   Сергей Ворон (@vorons) https://github.com/vorons\n\
+            \U0001F1F8\U0001F1F0   Jozef Gaal (@dodog) https://github.com/dodog\n\
+            \U0001F1F9\U0001F1F7   Giant Pink Robots! (@giantpinkrobots) https://github.com/giantpinkrobots\n\
+            \U0001F1FB\U0001F1F3   Xinh Nguyen (@ntxinh) https://github.com/ntxinh\n\
+            \U0001F1E8\U0001F1F3   适然(Sauntor) (@sauntor) https://github.com/sauntor")
         dialog.present(self)
 
     def init_clean(self, app):
