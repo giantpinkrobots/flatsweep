@@ -40,11 +40,12 @@ Caution: Flatsweep exclusively looks at the default Flatpak install directory. I
 </screenshots>
 
 <releases>
-<release version="v2024.3.20" date="2024-03-20">
+<release version="v2024.12.23" date="2024-12-23">
 <description>
-<p>- Update to GNOME 46 and Libadwaita 1.5.</p>
-<p>- Arabic language support.</p>
-<p>- Italian translations updated.</p>
+<p>Update to the GNOME 47 runtime</p>
+<p>Some minor UI adjustments</p>
+<p>Exclude symlinks from deletion</p>
+<p>Vietnamese, Portuguese (Portugal) and Slovak language support</p>
 </description>
 </release>
 </releases>
