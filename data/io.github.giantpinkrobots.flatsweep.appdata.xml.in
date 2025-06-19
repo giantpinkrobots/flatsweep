@@ -39,13 +39,18 @@ Caution: Flatsweep exclusively looks at the default Flatpak install directory. I
 </screenshot>
 </screenshots>
 
+<recommends>
+<control>keyboard</control>
+<control>pointing</control>
+<control>touch</control>
+</recommends>
+
 <releases>
-<release version="v2024.12.23" date="2024-12-23">
+<release version="v2025.6.20" date="2025-06-20">
 <description>
-<p>Update to the GNOME 47 runtime</p>
-<p>Some minor UI adjustments</p>
-<p>Exclude symlinks from deletion</p>
-<p>Vietnamese, Portuguese (Portugal) and Slovak language support</p>
+<p>Update to the GNOME 48 runtime</p>
+<p>Tweaks to UI</p>
+<p>Indonesian and Chinese (Taiwan) language support</p>
 </description>
 </release>
 </releases>
