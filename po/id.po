@@ -2,20 +2,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Ilham Fauzan <work@zan.re>, 2025.
+# Proficiency <proficiency@xmail.net>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-25 01:02+0700\n"
-"PO-Revision-Date: 2025-05-25 02:29+0700\n"
-"Last-Translator: ilham fauzan <work@zan.re>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2025-06-21 20:56+0700\n"
+"Last-Translator: Proficiency <proficiency@xmail.net>\n"
+"Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Gtranslator 48.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: data/io.github.giantpinkrobots.flatsweep.desktop.in:3
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:3
@@ -32,8 +34,8 @@ msgid ""
 "computer. Flatsweep helps you easily get rid of the residue left on your "
 "system by uninstalled Flatpaks."
 msgstr ""
-"Saat kamu menghapus sebuah aplikasi Flatpak, terkadang masih ada beberapa "
-"file yang tertinggal di komputermu. Flatsweep membantu kamu dengan mudah "
+"Saat anda menghapus sebuah aplikasi Flatpak, terkadang masih ada beberapa "
+"file yang tertinggal di komputer anda. Flatsweep membantu anda dengan mudah "
 "membersihkan sisa-sisa tersebut dari sistem setelah Flatpak dihapus."
 
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:17
@@ -43,8 +45,8 @@ msgid ""
 "of course."
 msgstr ""
 "Flatsweep menggunakan GTK4 dan Libadwaita untuk menyediakan antarmuka "
-"pengguna yang selaras dan terintegrasi dengan baik pada GNOME, tetapi tentu "
-"saja dapat digunakan di lingkungan desktop lainnya."
+"pengguna yang selaras dan terintegrasi dengan baik dengan GNOME, tetapi "
+"tentu saja dapat digunakan di lingkungan desktop lainnya."
 
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:20
 msgid ""
@@ -53,11 +55,11 @@ msgid ""
 "delete files that weren't supposed to be deleted. If you have no idea what a "
 "'custom install path' is, you'll be fine."
 msgstr ""
-"Peringatan: Flatsweep hanya memeriksa direktori instalasi Flatpak default. "
-"Jika kamu mengatur jalur instalasi khusus (custom install path), ada "
-"kemungkinan Flatsweep secara tidak sengaja menghapus file yang seharusnya "
-"tidak dihapus. Jika kamu tidak tahu apa itu “jalur instalasi khusus”, "
-"kemungkinan besar kamu aman."
+"Peringatan: Flatsweep hanya memeriksa direktori baku instalasi Flatpak. Jika "
+"kamu mengatur jalur instalasi khusus (custom install path), ada kemungkinan "
+"Flatsweep secara tidak sengaja menghapus file yang seharusnya tidak dihapus. "
+"Jika kamu tidak tahu apa itu “jalur instalasi khusus”, kemungkinan besar "
+"kamu aman."
 
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:38
 msgid ""
