@@ -1,4 +1,4 @@
-flatsweepVersion = "v2025.6.20"
+flatsweepVersion = "v2025.6.23"
 
 import sys
 import gi
@@ -267,7 +267,8 @@ class MainWindow(Adw.ApplicationWindow):
         self.boxLabelMB = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.boxLabelMB.set_spacing(-60)
         self.labelMB = Gtk.Label()
-        self.labelMB.set_margin_top(-50)
+        self.labelMB.set_margin_top(-30)
+        self.labelMB.set_margin_bottom(40)
         self.labelMB1 = Gtk.Label()
         self.labelMB1.set_hexpand(True)
         self.labelMB1.set_markup("<span size=\"40000\" weight=\"bold\">MB</span>")

@@ -46,11 +46,10 @@ Caution: Flatsweep exclusively looks at the default Flatpak install directory. I
 </recommends>
 
 <releases>
-<release version="v2025.6.20" date="2025-06-20">
+<release version="v2025.6.23" date="2025-06-23">
 <description>
-<p>Update to the GNOME 48 runtime</p>
-<p>Tweaks to UI</p>
-<p>Indonesian and Chinese (Taiwan) language support</p>
+<p>- Translation fixes with Slovak and Indonesian.</p>
+<p>- Slight UI tweaks to fix overlapping text</p>
 </description>
 </release>
 </releases>
