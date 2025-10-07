@@ -58,6 +58,8 @@ elif currentLanguage.startswith("sk"):
     from flatsweep import lang_sk as lang
 elif currentLanguage.startswith("id"):
     from flatsweep import lang_id as lang
+elif currentLanguage.startswith("ja"):
+    from flatsweep import lang_ja as lang
 else:
     from flatsweep import lang_en as lang
 #TRANSLATIONS END

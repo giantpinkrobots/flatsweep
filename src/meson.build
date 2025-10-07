@@ -36,7 +36,8 @@ flatsweep_sources = [
   'lang_vi.py',
   'lang_pt_PT.py',
   'lang_sk.py',
-  'lang_id.py'
+  'lang_id.py',
+  'lang_ja.py'
 ]
 
 install_data(flatsweep_sources, install_dir: moduledir)
