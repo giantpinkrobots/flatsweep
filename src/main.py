@@ -1,4 +1,4 @@
-flatsweepVersion = "v2025.6.23"
+flatsweepVersion = "v2025.10.7"
 
 import sys
 import gi
@@ -478,6 +478,7 @@ class MainWindow(Adw.ApplicationWindow):
             \U0001F1EE\U0001F1E9   ilhamfauzan (@ilhamfauzan) https://github.com/ilhamfauzan\n\
             \U0001F1EE\U0001F1F9   albanobattistella (@albanobattistella) https://github.com/albanobattistella\n\
             \U0001F1EE\U0001F1F9   Mia (@Methoko) https://github.com/Methoko\n\
+            \U0001F1EF\U0001F1F5   camegone (@camegone) https://github.com/camegone\n\
             \U0001F1F5\U0001F1F1   unsolaci (@unsolaci) https://github.com/unsolaci\n\
             \U0001F1F7\U0001F1FA   Сергей Ворон (@vorons) https://github.com/vorons\n\
             \U0001F1F8\U0001F1F0   Jozef Gaal (@dodog) https://github.com/dodog\n\

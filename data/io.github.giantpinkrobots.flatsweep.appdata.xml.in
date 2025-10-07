@@ -39,17 +39,21 @@ Caution: Flatsweep exclusively looks at the default Flatpak install directory. I
 </screenshot>
 </screenshots>
 
-<recommends>
+<requires>
+<display_length compare="ge">360</display_length>
+</requires>
+
+<supports>
 <control>keyboard</control>
 <control>pointing</control>
 <control>touch</control>
-</recommends>
+</supports>
 
 <releases>
-<release version="v2025.6.23" date="2025-06-23">
+<release version="v2025.10.7" date="2025-10-07">
 <description>
-<p>- Translation fixes with Slovak and Indonesian.</p>
-<p>- Slight UI tweaks to fix overlapping text</p>
+<p>- Japanese language support.</p>
+<p>- Update to GNOME runtime version 49.</p>
 </description>
 </release>
 </releases>
