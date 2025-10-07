@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: flatsweep\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-07 18:56+0900\n"
-"PO-Revision-Date: 2025-10-07 19:11+0900\n"
+"PO-Revision-Date: 2025-10-07 19:31+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -29,9 +29,10 @@ msgstr "Flatsweep"
 msgid "Flatpak leftover cleaner"
 msgstr "Flatpak 残存データクリーナー"
 
+# This may be the developer's name.
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:10
 msgid "Giant Pink Robots!"
-msgstr "巨大なピンクのロボット!"
+msgstr "Giant Pink Robots!"
 
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:21
 msgid ""
