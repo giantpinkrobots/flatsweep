@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the flatsweep package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: flatsweep\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-07 18:56+0900\n"
+"PO-Revision-Date: 2025-10-07 18:59+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.7\n"
+
+#: data/io.github.giantpinkrobots.flatsweep.desktop.in:3
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:3
+msgid "Flatsweep"
+msgstr ""
+
+#: data/io.github.giantpinkrobots.flatsweep.desktop.in:5
+#: data/io.github.giantpinkrobots.flatsweep.desktop.in:6
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:4
+msgid "Flatpak leftover cleaner"
+msgstr ""
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:10
+msgid "Giant Pink Robots!"
+msgstr ""
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:21
+msgid ""
+"When you uninstall a Flatpak, it can leave some files behind on your "
+"computer. Flatsweep helps you easily get rid of the residue left on your "
+"system by uninstalled Flatpaks."
+msgstr ""
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:24
+msgid ""
+"Flatsweep uses GTK4 and Libadwaita to provide a coherent user interface that "
+"integrates nicely with GNOME, but you can use it on any desktop environment "
+"of course."
+msgstr ""
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:27
+msgid ""
+"Caution: Flatsweep exclusively looks at the default Flatpak install "
+"directory. If you have set a custom install path, it might accidentally "
+"delete files that weren't supposed to be deleted. If you have no idea what a "
+"'custom install path' is, you'll be fine."
+msgstr ""
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:51
+msgid "- Translation fixes with Slovak and Indonesian."
+msgstr ""
+
+#: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:52
+msgid "- Slight UI tweaks to fix overlapping text"
+msgstr ""
