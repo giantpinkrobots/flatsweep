@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: flatsweep\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-07 18:56+0900\n"
-"PO-Revision-Date: 2025-10-07 18:59+0900\n"
+"PO-Revision-Date: 2025-10-07 19:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -21,17 +21,17 @@ msgstr ""
 #: data/io.github.giantpinkrobots.flatsweep.desktop.in:3
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:3
 msgid "Flatsweep"
-msgstr ""
+msgstr "Flatsweep"
 
 #: data/io.github.giantpinkrobots.flatsweep.desktop.in:5
 #: data/io.github.giantpinkrobots.flatsweep.desktop.in:6
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:4
 msgid "Flatpak leftover cleaner"
-msgstr ""
+msgstr "Flatpak 残存データクリーナー"
 
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:10
 msgid "Giant Pink Robots!"
-msgstr ""
+msgstr "巨大なピンクのロボット!"
 
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:21
 msgid ""
@@ -39,6 +39,9 @@ msgid ""
 "computer. Flatsweep helps you easily get rid of the residue left on your "
 "system by uninstalled Flatpaks."
 msgstr ""
+"Flatpak のアプリをアンインストールするとき、あなたのコンピューター内にいくつ"
+"かのファイルが残されてしまうことがあります。Flatsweep はそれらの残されたファ"
+"イルを簡単な操作で削除する手助けをします。"
 
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:24
 msgid ""
@@ -46,6 +49,9 @@ msgid ""
 "integrates nicely with GNOME, but you can use it on any desktop environment "
 "of course."
 msgstr ""
+"Flatsweep は GTK4 と Libsdwaita を使用して GNOME 環境と調和したユーザーイン"
+"ターフェースを提供しています、しかしもちろんあなたの好きなどんなデスクトップ"
+"環境でも使うことができます。"
 
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:27
 msgid ""
@@ -54,11 +60,16 @@ msgid ""
 "delete files that weren't supposed to be deleted. If you have no idea what a "
 "'custom install path' is, you'll be fine."
 msgstr ""
+"警告: Flatsweep はデフォルトの Flatpak インストールディレクトリのみを確認して"
+"います。もしあなたがインストール場所を変更している場合、削除されるべきでない"
+"ファイル (使用中のファイル) を誤って削除してしまうことがあります。あなたが"
+"「カスタムのインストールパス」について何も知らないなら、あなたが心配するべき"
+"ことはおそらくありません。"
 
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:51
 msgid "- Translation fixes with Slovak and Indonesian."
-msgstr ""
+msgstr "- スロバキア語、インドネシア語の翻訳の修正。"
 
 #: data/io.github.giantpinkrobots.flatsweep.appdata.xml.in:52
 msgid "- Slight UI tweaks to fix overlapping text"
-msgstr ""
+msgstr "- テキストが重なってしまう場合の UI の軽微な修正"
